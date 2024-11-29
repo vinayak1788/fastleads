@@ -9,8 +9,7 @@ export default function Home() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setLoading(true)
-
+    setLoading(true) 
     try {
       const res = await fetch('http://localhost:8000/chat', {
         method: 'POST',
