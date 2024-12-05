@@ -1,173 +1,69 @@
-/* General Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
-  overflow-x: hidden;
-}
-
 .container {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
   width: 100%;
-}
-
-/* Navbar Styles */
-.navbar {
-  background-color: #2d2f7a;
-  color: white;
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.navbar .menu-icon {
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
-.navbar h1 {
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-
-.navbar button {
-  background-color: #4f46e5;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.3s;
-}
-
-.navbar button:hover {
-  background-color: #4338ca;
-}
-
-/* Sidebar Styles */
-.sidebar {
-  background-color: #1f2937;
-  color: white;
-  width: 250px;
   min-height: 100vh;
+  background-color: #f5f6fa;
+}
+
+.navHeader {
   position: fixed;
   top: 0;
-  left: 0;
+  width: 100%;
   z-index: 100;
-  padding: 5px;
-  transform: translateX(-100%);
-  transition: transform 0.3s ease-in-out;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.sidebar.open {
-  transform: translateX(0);
-}
-
-.sidebar .sidebar-header {
-  font-size: 1.2rem;
-  font-weight: bold;
-  padding: 20px;
-  text-align: center;
-  border-bottom: 1px solid #374151;
-}
-
-.sidebar .menu {
-  list-style: none;
-  margin: 20px 0;
-}
-
-.sidebar .menu li {
-  padding: 15px 20px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  transition: background-color 0.3s;
-}
-
-.sidebar .menu li:hover {
-  background-color: #374151;
-}
-
-.sidebar .menu li .icon {
-  font-size: 1.2rem;
-}
-
-/* Main Layout */
 .main-layout {
   display: flex;
-  flex-grow: 1;
-  margin-left: 250px;
-  transition: margin-left 0.3s;
+  padding-top: 60px; /* Adjust for fixed navbar height */
+  position: relative;
 }
 
-.main-layout.sidebar-closed {
-  margin-left: 0;
+.sidebarele {
+  height: calc(100vh - 60px); /* Adjust for fixed navbar height */
+  position: fixed;
+  left: 0;
+  width: 250px;
+  transform: translateX(0); /* Default to visible */
+  transition: transform 0.3s ease;
+  background-color: #ffffff;
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Dashboard Section */
-.dashboard-cards-container {
-  padding: 20px;
-  flex-grow: 1;
-  background-color: #f9f9f9;
-  overflow-y: auto;
+.sidebarele.open {
+  transform: translateX(0); /* Sidebar visible when open */
 }
 
-.grid-layout {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+.sidebarele.closed {
+  transform: translateX(-100%); /* Sidebar hidden */
 }
 
-/* Card Styles */
-.dashboard-card {
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s, transform 0.3s;
+.dashboardgrid {
+  flex:  auto;
+  margin-left: 80px; /* Default margin when sidebar is closed */
+  padding: 2px;
+  transition: margin-left 0.3s ease;
 }
 
-.dashboard-card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transform: translateY(-5px);
+.dashboardgrid.sidebar-open {
+  margin-left: 250px; /* Adjust when sidebar is open */
 }
 
-.dashboard-card h3 {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.dashboard-card p {
-  color: #555;
-  font-size: 0.9rem;
-}
-
-/* Responsive Design */
 @media (max-width: 768px) {
-  .sidebar {
-    width: 200px;
+  .sidebarele {
+    transform: translateX(-100%); /* Hidden by default on smaller screens */
   }
 
-  .main-layout {
-    margin-left: 0;
+  .sidebarele.open {
+    transform: translateX(0); /* Visible when open */
   }
 
-  .dashboard-cards-container {
-    padding: 15px;
+  .dashboardgrid {
+    margin-left: 2px;
+    width: 100%; /* Use full width */
   }
 
-  .navbar h1 {
-    font-size: 1.2rem;
+  .dashboardgrid.sidebar-open {
+    margin-left: 0px; /* No margin for smaller screens */
   }
 }

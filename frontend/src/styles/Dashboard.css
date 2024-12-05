@@ -1,0 +1,98 @@
+.dashboardContent {
+  padding: 24px;
+  background-color: #f9fafb;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.topRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0px;
+  margin-bottom: 2px;
+}
+
+.dashboardTitle {
+  font-size: 24px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.newPostButton {
+  background-color: #3b82f6;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.newPostButton:hover {
+  background-color: #2563eb;
+}
+
+.dash-topbar {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding: 12px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.nav-item:hover {
+  background-color: #f3f4f6;
+}
+
+.nav-icon {
+  font-size: 18px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  padding: 16px;
+}
+
+.dashboard-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  cursor: grab;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-card h2 {
+  color: #111827;
+  margin-bottom: 16px;
+}
+
+.dashboard-card img {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.dashboard-card img:hover {
+  transform: scale(1.1);
+}
