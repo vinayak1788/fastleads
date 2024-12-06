@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Navbar from '../components/Layout/Navbar';
 import Sidebar from '../components/Layout/Sidebar';
 import '../styles/globals.css';
-import DashboardGrid from '../components/Dashboard/DashboardGrid';
+import DashboardGrid from './DashboardGrid';
 
 const Home = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);

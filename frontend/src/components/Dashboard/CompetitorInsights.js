@@ -1,115 +1,117 @@
-import React from 'react';
-import Link from 'next/link';
+import React from "react";
+import { Bar } from "react-chartjs-2";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Tooltip,
+  Legend,
+} from "chart.js";
+
+ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
 const CompetitorInsightsCard = () => {
-  const data = [
-    { label: "LinkedIn", value: 74779, color: "#0e76a8" },
-    { label: "Facebook", value: 56635, color: "#3b5998" },
-    { label: "Instagram", value: 43887, color: "#e4405f" },
-    { label: "Twitter", value: 19027, color: "#1da1f2" },
-    { label: "YouTube", value: 8142, color: "#ff0000" },
-    { label: "Share chat", value: 4918, color: "#f1c40f" },
-  ];
+  const data = {
+    labels: ["LinkedIn", "Facebook", "Instagram", "Twitter", "YouTube", "Share chat"],
+    datasets: [
+      {
+        label: "Engagement",
+        data: [74779, 56635, 43887, 19027, 8142, 4918],
+        backgroundColor: [
+          "#0077b5", // LinkedIn
+          "#4267B2", // Facebook
+          "#E1306C", // Instagram
+          "#1DA1F2", // Twitter
+          "#FF0000", // YouTube
+          "#FFC107", // Share chat
+        ],
+        borderRadius: 5,
+      },
+    ],
+  };
+
+  const options = {
+    indexAxis: "y", // Horizontal bars
+    responsive: true,
+    plugins: {
+      legend: {
+        display: false, // Hide legend
+      },
+    },
+    scales: {
+      x: {
+        ticks: {
+          color: "#000",
+        },
+        grid: {
+          drawBorder: false,
+          color: "#e0e0e0",
+        },
+      },
+      y: {
+        ticks: {
+          color: "#000",
+        },
+        grid: {
+          drawBorder: false,
+          display: false,
+        },
+      },
+    },
+  };
 
   return (
     <div style={styles.card}>
-      <div style={styles.cardHeader}>
-        <span style={styles.cardTitle}>Competitor insights & Industry Trends</span>
-        <Link href="/components/CompetitorInsights">
-          <button style={styles.navigateButton}>↗</button>
-        </Link>
-      </div>
+      {/* Card Header */}
       
-      <div style={styles.graph}>
-        {data.map((item, index) => (
-          <div key={index} style={styles.barWrapper}>
-            <div style={styles.barInfo}>
-              <span style={styles.label}>{item.label}</span>
-            </div>
-            <div style={styles.barContainer}>
-              <div
-                style={{
-                  ...styles.bar,
-                  width: `${(item.value / 80000) * 100}%`, // Dynamic width calculation based on max value
-                  backgroundColor: item.color,
-                }}
-              />
-            </div>
-            <span style={styles.value}>{item.value.toLocaleString()}</span>
-          </div>
-        ))}
+      {/* Chart Section */}
+      <div style={styles.chartContainer}>
+      <div style={styles.header}>
+        <span style={styles.title}>Competitor insights & Industry Trends</span>
+        <button title="Expand" style={styles.expandButton}>
+        ↗
+        </button>
+      </div>
+        <Bar data={data} options={options} />
       </div>
     </div>
   );
 };
 
 const styles = {
-  card: {
-    backgroundColor: '#ffffff',
-    padding: '20px',
-    borderRadius: '12px',
-    boxShadow: '0px 8px 20px rgba(0, 0, 0, 0.1)',
-    width: '90%',
-    maxWidth: '750px',
-    margin: '20px auto',
+  // card: {
+  //   width: "600px",
+  //   background: "linear-gradient(to bottom right, #fdfdfd, #f0f4ff)",
+  //   borderRadius: "15px",
+  //   //boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+  //   padding: "20px",
+  //   fontFamily: "Arial, sans-serif",
+  //   margin: "auto", // Center card horizontally
+  // },
+  chartContainer: {
+    background: "#ffffff",
+    padding: "20px",
+    borderRadius: "10px",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
   },
-  cardHeader: {
+  header: {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingBottom: '15px',
-    borderBottom: '2px solid #e0e0e0',
+    marginBottom: '15px',
   },
-  cardTitle: {
-    fontSize: '22px',
-    fontWeight: '700',
+  title: {
+    fontSize: '1rem',
+    fontWeight: 'bold',
     color: '#333',
   },
-  navigateButton: {
-    padding: '8px 15px',
-    fontSize: '16px',
-    backgroundColor: '#3498db',
-    color: '#ffffff',
+  expandButton: {
+    background: 'none',
     border: 'none',
-    borderRadius: '6px',
+    fontSize: '1.2rem',
+    color: '#888',
     cursor: 'pointer',
-    transition: 'background-color 0.3s',
-  },
-  graph: {
-    marginTop: '20px',
-  },
-  barWrapper: {
-    display: 'flex',
-    alignItems: 'center',
-    marginBottom: '10px',
-  },
-  barInfo: {
-    display: 'flex',
-    alignItems: 'center',
-    width: '30%',
-  },
-  label: {
-    fontSize: '14px',
-    fontWeight: '600',
-    color: '#333',
-  },
-  barContainer: {
-    width: '60%',
-    height: '12px',
-    backgroundColor: '#f4f4f4',
-    borderRadius: '8px',
-    marginRight: '15px',
-  },
-  bar: {
-    height: '100%',
-    borderRadius: '8px',
-  },
-  value: {
-    fontSize: '14px',
-    fontWeight: '600',
-    color: '#333',
-    width: '10%',
-    textAlign: 'right',
   },
 };
 

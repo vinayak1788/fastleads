@@ -74,7 +74,7 @@ const EngagementCard = () => {
           border-radius: 8px;
           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
           padding: 16px;
-          width: 300px;
+          width: 350px;
           font-family: Arial, sans-serif;
         }
 

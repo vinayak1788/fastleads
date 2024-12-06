@@ -1,14 +1,17 @@
 import React from "react";
+import Link from "next/link";
 import { CircularProgressbar } from "react-circular-progressbar"; // Import the new library
 import "react-circular-progressbar/dist/styles.css"; // Import styles
 
 const ContentPushMarketingCard = () => {
   return (
-    <div className="card-container">
+    <div className="pushcard-container">
       <div className="header-container">
-        <h3>Content Push Marketing</h3>
-        <button className="expand-button">Expand</button>
-      </div>
+         <span>Content Push Marketing</span>
+         <Link href="/components/ContentScheduler">
+          <button className="navigate-button">↗</button>
+        </Link>
+        </div>
 
       <div className="chart-container">
         <CircularProgressbar
@@ -34,20 +37,20 @@ const ContentPushMarketingCard = () => {
       </div>
 
       <style jsx>{`
-        .card-container {
-          background-color: #f0fdf4; /* Light green */
-          border-radius: 12px;
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-          padding: 20px;
+        .pushcard-container {
+         background: linear-gradient(to bottom right, #eef3ff, #cdd8f9);
+          border-radius: 10px;
+          padding: 2px;
           text-align: center;
-          width: 350px;
+          width: 520px;
+          height: 400px;
         }
 
         .header-container {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          background-color: #bbf7d0;
+          background: linear-gradient(to bottom right, #eef3ff, #cdd8f9);
           padding: 10px;
           border-radius: 8px;
           margin-bottom: 20px;
@@ -61,12 +64,12 @@ const ContentPushMarketingCard = () => {
         }
 
         .expand-button {
-          background-color: #10b981;
+          background: linear-gradient(to bottom right, #eef3ff, #cdd8f9);
           color: #fff;
           border: none;
           border-radius: 4px;
           padding: 5px 10px;
-          font-size: 14px;
+          font-size: 10px;
           cursor: pointer;
           transition: background-color 0.2s ease;
         }
@@ -76,7 +79,12 @@ const ContentPushMarketingCard = () => {
         }
 
         .chart-container {
-          margin: 20px 0;
+        position: relative;
+        background: linear-gradient(to bottom right, #eef3ff, #cdd8f9);
+        
+          width: 250px;
+         
+          margin: 0 auto;
         }
 
         .info-container {
@@ -85,7 +93,7 @@ const ContentPushMarketingCard = () => {
         }
 
         .info-container .value {
-          font-size: 32px;
+          font-size: 20px;
           font-weight: bold;
           color: #2563eb; /* Blue for the main value */
         }
