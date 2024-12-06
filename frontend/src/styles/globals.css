@@ -1,7 +1,7 @@
 .container {
   width: 100%;
-  min-height: 100vh;
-  background-color: #f5f6fa;
+  min-height: 100vh; /* Changed from 10vh to 100vh for full page height */
+  background: linear-gradient(to bottom right, #f0f8ff, #e6e6fa); /* Fixed gradient syntax */
 }
 
 .navHeader {
@@ -9,9 +9,21 @@
   top: 0;
   width: 100%;
   z-index: 100;
-  background-color: #ffffff;
+  background: linear-gradient(to right, #ffffff, #f8f9fa); /* Added gradient to navbar */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+.sidebarele {
+  height: calc(100vh - 60px);
+  position: fixed;
+  left: 0;
+  width: 250px;
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+  background: linear-gradient(to bottom, #ffffff, #f8f9fa); /* Added gradient to sidebar */
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+}
+
 
 .main-layout {
   display: flex;
@@ -19,16 +31,7 @@
   position: relative;
 }
 
-.sidebarele {
-  height: calc(100vh - 60px); /* Adjust for fixed navbar height */
-  position: fixed;
-  left: 0;
-  width: 250px;
-  transform: translateX(0); /* Default to visible */
-  transition: transform 0.3s ease;
-  background-color: #ffffff;
-  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
-}
+
 
 .sidebarele.open {
   transform: translateX(0); /* Sidebar visible when open */

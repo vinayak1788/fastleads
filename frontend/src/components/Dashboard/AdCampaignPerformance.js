@@ -8,9 +8,11 @@ import {
   Tooltip,
 } from "chart.js";
 
+// Register the chart.js elements
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip);
 
 const AdCampaignCard = () => {
+  // Data for the Bar chart
   const data = {
     labels: ["LinkedIn", "Facebook", "Instagram", "Twitter"],
     datasets: [
@@ -22,6 +24,7 @@ const AdCampaignCard = () => {
     ],
   };
 
+  // Chart options
   const options = {
     plugins: {
       legend: { display: false },
@@ -34,10 +37,10 @@ const AdCampaignCard = () => {
   };
 
   return (
-    <div className="p-4 bg-pink-100 rounded-lg shadow-md">
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-lg font-semibold">Ad Campaign Management</h2>
-        <button className="text-gray-600">
+    <div style={styles.adCampaignCard}>
+      <div style={styles.adCampaignCardHeader}>
+        <h2 style={styles.adCampaignCardHeaderTitle}>Ad Campaign Management</h2>
+        <button style={styles.adCampaignCardHeaderButton}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -54,11 +57,45 @@ const AdCampaignCard = () => {
           </svg>
         </button>
       </div>
-      <div className="bg-gradient-to-r from-blue-100 to-blue-200 p-4 rounded-lg">
+      <div style={styles.chartContainer}>
         <Bar data={data} options={options} />
       </div>
     </div>
   );
 };
 
-export default AdCampaignCard;
+// Inline styles as a JavaScript object at the bottom
+const styles = {
+  adCampaignCard: {
+    padding: "1px",
+    background: "linear-gradient(to right, #e0f7fa, #bbdefb)",
+  
+    borderRadius: "8px",
+    width : "522px",
+    height : "300px",
+    //boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+  },
+  adCampaignCardHeader: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: "1px",
+  },
+  adCampaignCardHeaderTitle: {
+    fontSize: "1.125rem",
+    fontWeight: "600",
+  },
+  adCampaignCardHeaderButton: {
+    color: "#4b5563",
+  },
+  chartContainer: {
+    // background: "linear-gradient(to right, #e0f7fa, #bbdefb)",
+   padding: "10px",
+    borderRadius: "8px",
+    width : "500px",
+    height : "220px",
+    
+  },
+};
+
+export default AdCampaignCard;

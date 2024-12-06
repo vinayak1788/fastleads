@@ -98,11 +98,11 @@ const ContentSchedulerCard = () => {
         .card-container {
           background: linear-gradient(to bottom right, #eef3ff, #cdd8f9);
           border-radius: 8px;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-          padding: 16px;
-          width: 300px;
+          //box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          padding: 10px;
+          width: 500px;
           font-family: Arial, sans-serif;
-          margin-bottom: 20px;
+         
         }
 
         .card-header {
@@ -111,11 +111,11 @@ const ContentSchedulerCard = () => {
           font-weight: bold;
           font-size: 16px;
           color: #3a3b3f;
-          margin-bottom: 20px;
+          margin-bottom: 10px;
         }
 
         .navigate-button {
-          background: none;
+          background: lightblue;
           border: none;
           cursor: pointer;
           font-size: 18px;
@@ -138,7 +138,7 @@ const ContentSchedulerCard = () => {
         }
 
         .chart-center .total {
-          font-size: 24px;
+          font-size: 25px;
           font-weight: bold;
           color: #3a3b3f;
         }
@@ -186,7 +186,7 @@ const ContentSchedulerCard = () => {
 
         .value {
           font-weight: bold;
-          margin-left: 4px;
+          margin-left: 5px;
         }
 
         .expand-button {
@@ -199,7 +199,7 @@ const ContentSchedulerCard = () => {
         }
 
         .expanded-content {
-          margin-top: 10px;
+          margin-top: 15px;
           font-size: 14px;
           color: #3a3b3f;
         }

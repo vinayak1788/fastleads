@@ -20,7 +20,7 @@ export default function Sidebar({ toggleSidebar }) {
   const router = useRouter(); // For dynamic active class
 
   const navItems = [
-    { href: "/components/Dashboard/Dashboard", icon: <FaChartLine />, label: "Dashboard" },
+    { href: "/DashboardGrid", icon: <FaChartLine />, label: "Dashboard" },
     { href: "/Content_Integration_Analysis", icon: <FaPlug />, label: "Content Integration" },
     { href: "/competitor-insights", icon: <FaUsers />, label: "Competitor Insights" },
     { href: "/content-creation", icon: <FaPenSquare />, label: "Content Create & Marketing" },
@@ -34,7 +34,7 @@ export default function Sidebar({ toggleSidebar }) {
 
   return (
     <aside className={styles.sidebar}>
-      <div className={styles.logo}>FastSurvey</div>
+      
       <nav className={styles.nav}>
         {navItems.map((item) => (
           <Link key={item.href} href={item.href} passHref>

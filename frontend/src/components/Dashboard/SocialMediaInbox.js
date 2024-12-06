@@ -38,75 +38,61 @@ const SocialMediaInboxCard = () => {
   };
 
   return (
-    <div className="card-container">
-      {/* Header with title and expand button */}
-      <div className="header-container">
-        <h2>Social Media Inbox</h2>
-        <button className="extension-button">Expand</button>
+    <div style={styles.cardContainer}>
+      {/* Header Section */}
+      <div style={styles.header}>
+        <span style={styles.title}>Social Media Inbox</span>
+        <button title="Expand" style={styles.expandButton}>
+          ↗
+        </button>
       </div>
 
-      {/* Pie chart container */}
-      <div className="chart-container">
+      {/* Pie Chart Section */}
+      <div style={styles.chartContainer}>
         <Pie data={data} options={options} />
       </div>
-
-      {/* Styles */}
-      <style jsx>{`
-        .card-container {
-          background: #ffffff;
-          border-radius: 12px;
-          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-          padding: 20px;
-          font-family: Arial, sans-serif;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          gap: 20px;
-        }
-
-        .header-container {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        }
-
-        .header-container h2 {
-          font-size: 24px;
-          font-weight: bold;
-          color: #374151;
-          margin: 0;
-        }
-
-        .extension-button {
-          background-color: #10b981;
-          color: white;
-          border: none;
-          padding: 8px 16px;
-          border-radius: 6px;
-          cursor: pointer;
-          font-size: 16px;
-          transition: background-color 0.2s ease-in-out;
-        }
-
-        .extension-button:hover {
-          background-color: #059669;
-        }
-
-        .chart-container {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 200px; /* Adjust the height as needed */
-          position: relative;
-        }
-
-        .chart-container canvas {
-          width: 100% !important; /* Ensures the chart is responsive */
-          height: 100% !important; /* Ensures the chart is responsive */
-        }
-      `}</style>
     </div>
   );
+};
+
+// Styles for the card and its components
+const styles = {
+  cardContainer: {
+    background: "linear-gradient(to bottom right, #eef3ff, #cdd8f9)",
+    borderRadius: "12px",
+    boxShadow: "0 8px 16px rgba(0, 0, 0, 0.1)",
+    padding: "20px",
+    fontFamily: "Arial, sans-serif",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    width: "350px",
+    height: "280px",
+    gap: "15px",
+  },
+  header: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  title: {
+    fontSize: "1rem",
+    fontWeight: "bold",
+    color: "#333",
+  },
+  expandButton: {
+    background: "none",
+    border: "none",
+    fontSize: "1.2rem",
+    color: "#888",
+    cursor: "pointer",
+  },
+  chartContainer: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "200px",
+  },
 };
 
 export default SocialMediaInboxCard;
