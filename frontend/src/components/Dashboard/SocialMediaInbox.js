@@ -66,8 +66,8 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
-    width: "350px",
-    height: "280px",
+    width: "520px",
+    height: "380px",
     gap: "15px",
   },
   header: {
