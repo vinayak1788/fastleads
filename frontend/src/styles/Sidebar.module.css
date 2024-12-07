@@ -1,57 +1,106 @@
-.sidebar {
-  background-color: rgba(221, 230, 237, 0.15);
-  border-right: 1px solid rgba(255, 255, 255, 0.6);
+/* Sidebar.module.css */
+
+/* Sidebar container styles */
+.sidebarContainer {
+  /* border:2px solid red; */
   display: flex;
-  max-width: 228px;
   flex-direction: column;
-  overflow: hidden;
-  color: rgba(66, 74, 80, 1);
-  padding: 18px;
-  font: 400 14px Poppins, sans-serif;
+  /* padding: 20px 20px 0; */
+  font-size: 14px;
+  color: #4b5563; /* text-gray-700 */
+  background-color: rgba(241, 245, 249, 0.1); /* bg-slate-200 with opacity */
+  /* border-right: 1px solid rgba(255, 255, 255, 0.6); */
+  /* max-width: 228px; */
+  height: 100vh;
+  /* overflow-y: auto; */
+  width: 15%;
 }
 
-.menu {
+/* Dashboard item styles */
+.dashboardItem {
   display: flex;
-  width: 100%;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.sidebarItem {
-  border-radius: 8px;
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  padding: 8px;
+  justify-content: space-around;
   align-items: center;
+  /* gap: 12px; */
+  padding: 10px 50px 10px 10px;
+  min-height: 20px;
+  background-color: #4f46e5; /* Indigo background */
+  color: #f8fafc; /* text-zinc-100 */
+  border-radius: 8px;
+  white-space: nowrap;
+  font-weight: bold;
+  width:75%
+
 }
 
-.active {
-  background: var(--Primary, #2915f9);
-  color: rgba(241, 241, 241, 1);
-}
-
-.itemContent {
+/* Navigation item styles */
+.navItem {
+  /* border: 2px solid green; */
+  align-items: center;
+  padding: 10px;
+  margin-top: 8px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width:170px;
   display: flex;
+  justify-content: space-evenly;
+
+}
+
+.navItem:hover {
+  background-color: rgba(79, 70, 229, 0.1); /* Hover effect */
+}
+
+/* Navigation item content */
+.navItemContent {
+  display: flex;
+  /* justify-content: space-between; */
   gap: 12px;
   align-items: center;
+  width: 100%;
+  /* border: 2px solid blue; */
+ 
+}
+.navItem::-webkit-scrollbar {
+  display: none;
 }
 
-.itemIcon {
-  aspect-ratio: 1;
-  object-fit: contain;
-  object-position: center;
+
+
+/* Icon styles */
+.navItemIcon {
   width: 24px;
+  height: 24px;
+  object-fit: contain;
 }
 
-.itemLabel {
-  flex-grow: 1;
+.navItemLabel {
+  margin: auto 0;
+  display: flex;
   white-space: nowrap;
 }
 
-.arrowIcon {
-  aspect-ratio: 1;
-  object-fit: contain;
-  object-position: center;
+/* Dropdown icon */
+.dropdownIcon {
   width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .sidebarContainer {
+    max-width: 180px;
+    padding: 15px 15px 0;
+  }
+
+  .navItem {
+    max-width: 160px;
+  }
+
+  .navItemLabel {
+    font-size: 12px;
+  }
 }

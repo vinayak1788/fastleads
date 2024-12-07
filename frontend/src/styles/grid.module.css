@@ -4,7 +4,7 @@
   justify-content: space-between;
   align-items: center;
   border-radius: 10px;
-  width: 68%;
+  width: 92%;
   height: 10px;
   padding: 1rem 2rem;
   background-color: #e5f0ef;
@@ -12,6 +12,8 @@
   position: sticky;
   top: 0;
   z-index: 0;
+  /* border:2px solid red; */
+  /* margin: 0px 5px 25x 0px; */
 }
 
 /* Sub Header */
@@ -20,12 +22,13 @@
   align-items: center;
   gap: 1rem;
   height: inherit;
-  width: 68%;
+  width: 92%;
   padding: auto;
   justify-content: space-between;
   padding: 1rem 2rem;
   background-color: #f8f9fa;
   border-bottom: 1px solid #e0e0e0;
+  border-radius: 10px;
 }
 
 /* Grid Container */
@@ -169,7 +172,7 @@
 }
 
 /* Responsive Design */
-@media (max-width: 1200px) {
+/* @media (max-width: 1200px) { */
   .gridContainer {
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas: 
@@ -179,7 +182,7 @@
       "card7 card8"
       "card9 .";
   }
-}
+/* } */
 
 @media (max-width: 768px) {
   .gridContainer {

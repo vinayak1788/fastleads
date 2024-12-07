@@ -17,18 +17,21 @@
   height: calc(100vh - 60px);
   position: fixed;
   left: 0;
-  width: 250px;
+  width: 15%;
   transform: translateX(0);
   transition: transform 0.3s ease;
   background: linear-gradient(to bottom, #ffffff, #f8f9fa); /* Added gradient to sidebar */
   box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
+
 
 
 .main-layout {
   display: flex;
   padding-top: 60px; /* Adjust for fixed navbar height */
   position: relative;
+  width: 100vw;
 }
 
 
@@ -43,9 +46,10 @@
 
 .dashboardgrid {
   flex:  auto;
-  margin-left: 80px; /* Default margin when sidebar is closed */
+  /* margin-left: 80px; Default margin when sidebar is closed */
   padding: 2px;
   transition: margin-left 0.3s ease;
+  width: 70%;
 }
 
 .dashboardgrid.sidebar-open {
