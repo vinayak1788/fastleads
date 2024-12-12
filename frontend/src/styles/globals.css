@@ -98,7 +98,7 @@ body.light-theme {
 }
 
 /* Dark Theme */
-body.dark-theme {
+body.blue {
   /* --background-color: #1e1e2f; Dark Blue-Grey */
   --text-color: #f8f8f2; /* Light Grey */
   --navbar-color: #2c2c3b; /* Darker Grey */
@@ -113,7 +113,7 @@ body.dark-theme {
 }
 
 /* Custom Theme */
-body.custom-theme {
+body.light {
   --background-color: linear-gradient(to bottom right, #d0e6f9, #e6e6fa);
   --text-color: #000000; /* Brown */
   --navbar-color: #b5ffe1; /* Moccasin */
@@ -123,7 +123,7 @@ body.custom-theme {
   --gradient-end: #f4d5ff;
 }
 
-DndProvider.drak-theme {
+DndProvider.drak {
   --background-color: #1e1e2f; /* Dark Blue-Grey */
   --text-color: #f8f8f2; /* Light Grey */
   --navbar-color: #2c2c3b; /* Darker Grey */
@@ -171,12 +171,6 @@ DndProvider.drak-theme {
 }
 
 /* Dashboard Grid */
-.dashboardgrid {
-  flex: auto;
-  margin-left: 80px; /* Default margin when sidebar is closed */
-  padding: 2px;
-  transition: margin-left 0.3s ease;
-}
 
 .dashboardgrid.sidebar-open {
   margin-left: 250px; /* Adjust when sidebar is open */

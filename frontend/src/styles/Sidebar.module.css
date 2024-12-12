@@ -2,18 +2,16 @@
 
 /* Sidebar container styles */
 .sidebarContainer {
-  /* border:2px solid red; */
   display: flex;
   flex-direction: column;
-  /* padding: 20px 20px 0; */
   font-size: 14px;
-  color: #070708; /* text-gray-700 */
-  /* background-color: rgba(241, 245, 249, 0.1); bg-slate-200 with opacity */
-  /* border-right: 1px solid rgba(255, 255, 255, 0.6); */
-  /* max-width: 228px; */
-  height: 200vh;
-  /* overflow-y: auto; */
-  width: 12%;
+  color: #0a0202;/*text color*/
+  /* Set a large height to ensure scrollable content */
+   /* Set the width of the sidebar */
+  border: 1px solid rgb(10, 4, 4);
+  padding: 2px 5px 5px;
+  border-radius: 20px;
+  /* Enable vertical scrolling if content overflows */
 }
 
 /* Dashboard item styles */
@@ -21,58 +19,53 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  /* gap: 12px; */
   padding: 10px 50px 10px 10px;
-  min-height: 20px;
-  background-color: #281ee2; /* Indigo background */
-  color: #f8fafc; /* text-zinc-100 */
+  
+
   border-radius: 8px;
   white-space: nowrap;
   font-weight: bold;
-  width:75%
-
+  
+  width: 100%;
 }
 
 /* Navigation item styles */
 .navItem {
-  /* border: 2px solid green; */
   align-items: center;
-  padding: 10px;
+  padding: 2px;
   margin-top: 8px;
   border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.2);
+  
   cursor: pointer;
-  transition: background-color 0.3s;
-  width:170px;
+  ;
   display: flex;
   justify-content: space-evenly;
-
+  width: 100%;
+  max-width: 170px; /* Limiting width for uniformity */
 }
 
 .navItem:hover {
-  background-color: rgba(41, 30, 243, 0.1); /* Hover effect */
+  background-color: lightblue; /* Hover effect */
 }
 
 /* Navigation item content */
 .navItemContent {
   display: flex;
-  /* justify-content: space-between; */
-  gap: 12px;
+  
+  gap: 10px;
   align-items: center;
   width: 100%;
-  /* border: 2px solid blue; */
- 
 }
+
 .navItem::-webkit-scrollbar {
   display: none;
 }
 
-
-
 /* Icon styles */
 .navItemIcon {
-  width: 24px;
-  height: 24px;
+  width: 25px;
+  color: #070708;
+  height: 25px;
   object-fit: contain;
 }
 
@@ -82,35 +75,16 @@
   white-space: nowrap;
 }
 
-/* Dropdown icon */
-
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .sidebarContainer {
-    max-width: 180px;
-    padding: 15px 15px 0;
-  }
-
-  .navItem {
-    max-width: 160px;
-  }
-
-  .navItemLabel {
-    font-size: 12px;
-  }
-}
 /* Dropdown menu container */
 .dropdownMenu {
   position: absolute; /* Position it relative to the parent element */
   top: 100%; /* Place it directly below the button */
   left: 0; /* Align it with the button */
   margin-top: 8px; /* Add some spacing from the button */
-  background-color: #f1f5f9; /* Dropdown background color */
+  
   border-radius: 8px; /* Rounded corners */
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  z-index: 1; /* Ensure it's above other content */
-  /* display: flex; */
+  /* Ensure it's above other content */
   flex-direction: column;
   padding: 8px;
   width: 60%; /* Match the button width */
@@ -121,14 +95,36 @@
   padding: 8px 12px;
   cursor: pointer;
   border-radius: 4px;
-  transition: background-color 0.2s;
+
 }
 
 .dropdownItem:hover {
-  background-color: rgba(22, 15, 147, 0.1); /* Hover effect */
+  background-color: rgba(34, 174, 221, 0.1); /* Hover effect */
 }
 
 /* Parent navItem to handle relative positioning */
 .navItem {
   position: relative; /* Required for dropdown to position itself below */
 }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .sidebarContainer {
+    width: 200px; /* Adjust sidebar width for smaller screens */
+    padding: 15px 15px 0;
+    height: 100vh; /* Ensure sidebar fits within screen */
+  }
+
+  .navItem {
+    max-width: 160px;
+  }
+
+  .navItemLabel {
+    font-size: 12px; /* Adjust font size for smaller screens */
+  }
+
+  .dashboardItem {
+    width: 100%; /* Ensure dashboard item spans full width */
+  }
+}
+

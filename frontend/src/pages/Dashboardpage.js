@@ -7,11 +7,17 @@ import EngagementFeedCard from '../components/Dashboard/EngagementFeed/Engagemen
 import SocialMediaInboxCard from '../components/Dashboard/SocialMediaInbox/SocialMediaInboxCard';
 import ContentSchedulerCard from '../components/Dashboard/ContentScheduler/ContentSchedulerCard';
 import LeadOverviewCard from '../components/Dashboard/LeadAndCustomization/LeadAndCustomizationCard';  // Updated import
+
+import DashboardHeader from '../components/Dashboard/DashboardHeader/DashboardHeader'; // Import DashboardHeader component
 import "../styles/Dashboard.css";  // CSS file import
 
 const DashboardPage = () => {
   return (
     <div className="dashboard-container">
+      <div className="dash-header">
+        <DashboardHeader />
+        </div>
+        <dragable>
       <div className="row">
         <KeywordsTrendsCard />
         <CompetitorKeywordsCard />
@@ -28,6 +34,7 @@ const DashboardPage = () => {
       <div className="row">
         <LeadOverviewCard />
       </div>
+      </dragable>
     </div>
   );
 };
