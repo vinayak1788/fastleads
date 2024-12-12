@@ -1,0 +1,55 @@
+.push-market-content-card {
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 400px;
+  height: 350px;
+  
+  color: #333;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  overflow: hidden;}
+
+.push-market-content-card .card-header {
+  display: flex;
+  justify-content: space-between;
+  background-color:darkgray;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  padding: 5px;
+  height: 40px;
+  width: 100%;
+}
+.expend-button {
+  background-color: transparent;
+  border: none;
+  position:left;
+  color: #ff0000;
+  font-size: 20px;
+  cursor: pointer;
+}
+.push-market-content-card .card-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ 
+  padding-top: 10px;
+}
+
+.content-push {
+  padding-left: 10px;
+  width: 400px; /* Adjust width as necessary */
+  height: 280px; /* Adjust the height of the doughnut chart */
+}
+
+.content-info {
+  /* Adjust width as necessary */
+  
+  font-size: 5px;
+  font-weight: bold;
+  color: #2d2d2d;
+  text-align: left;
+}

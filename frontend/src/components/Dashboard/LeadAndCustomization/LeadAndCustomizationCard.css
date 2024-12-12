@@ -1,0 +1,96 @@
+.main-lead-and-customization-card{
+  width: 100%;
+  height: 100%;
+}
+/* LeadAndCustomizationCard.css */
+.lead-and-customization-card {
+  display: flex;
+  justify-content:space-between;
+  /* flex-direction: column; */
+  gap: 20px;
+  width: 100%;
+  height: 100%;
+  
+}
+
+.leadcard-header {
+  display: flex;
+  justify-content: space-between;
+  background-color:rgb(180, 219, 242);
+  font-size: 1.2rem;
+  border-radius: 5px;
+  padding: 5px;
+  width: 200%;
+  height: 40px;
+  font-weight: bold;
+}
+/* .custcard-header {
+  display: flex;
+  justify-content: space-between;
+  background-color:rgb(240, 182, 182);
+  font-size: 1.2rem;
+  border-radius: 5px;
+  padding: 5px;
+  width: 100%; 
+  font-weight: bold;
+} */
+/* .lead-overview-card {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 45%;
+} */
+/* .customization-lead-management-card{
+  
+  flex-direction: column;
+  gap: 15px;
+  width: 45%;
+} */
+ .leadcard1,.leadcard2{
+  width: 50%;
+  height: 100%;
+  /* margin-left: -2px; */
+  
+ }
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.chart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.total-leads {
+  text-align: center;
+}
+
+.total-leads h1 {
+  font-size: 3rem;
+  color: #070a08;
+}
+
+.platform-leads {
+  display: flex;
+  gap: 10px;
+ justify-content: center;
+}
+
+.platform-item {
+  
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.platform-item p {
+  margin: 0;
+}
+
+.total-leads-graph {
+  text-align: center;
+  margin-top: 20px;
+}

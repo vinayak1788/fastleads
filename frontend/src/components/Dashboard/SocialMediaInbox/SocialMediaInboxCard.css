@@ -1,0 +1,28 @@
+.social-media-inbox-card {
+  
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center-align the content */
+}
+
+.social-media-inbox-card .card-header {
+  display: flex;
+  justify-content: space-between;
+  background-color:aqua;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  padding: 5px;
+  width: 100%; /* Center-align header text */
+}
+
+.social-media-inbox-card .card-body {
+  padding-top: 10px;
+  width: 100%; /* Ensure the chart fits within the card */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+

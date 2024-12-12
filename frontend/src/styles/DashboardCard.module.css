@@ -1,64 +1,30 @@
-/* DashboardCard styles */
 .dashboard-card {
-  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #fff;
   border: 1px solid #e5e7eb; /* Light gray border */
   border-radius: 8px; /* Rounded corners */
-  background-color: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow effect */
+  margin-bottom: 20px;
 }
 
-.dashboard-card:hover {
-  transform: translateY(-5px); /* Slight lift on hover */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* More prominent shadow */
-}
-
-/* Content styles */
-.dashboard-card .content {
-  margin-top: 16px;
-}
-
-.dashboard-card .content-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 8px;
-}
-
-.dashboard-card .content-item span {
-  font-size: 0.9rem;
-  color: #4b5563; /* Gray text */
-}
-
-.dashboard-card .content-item span.font-semibold {
-  font-weight: 600;
-}
-
-/* Total Content section */
-.dashboard-card .total-content {
-  margin-top: 16px;
-  text-align: center;
-  font-size: 1.2rem;
+.dashboard-card .card-header {
+  font-size: 18px;
   font-weight: bold;
-  color: #111827; /* Darker gray for emphasis */
+  color: #333;
+  margin-bottom: 10px;
 }
 
-/* Chart section */
-.dashboard-card .chart {
-  margin-top: 16px;
+.dashboard-card .card-body {
+  font-size: 14px;
+  color: #555;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .dashboard-card {
-    padding: 12px;
-  }
-
-  .dashboard-card .content-item span {
-    font-size: 0.8rem;
-  }
-
-  .dashboard-card .total-content {
-    font-size: 1rem;
-  }
+.dashboard-card .card-footer {
+  font-size: 12px;
+  color: #888;
+  text-align: right;
 }

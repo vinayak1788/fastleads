@@ -1,0 +1,41 @@
+.competitor-keywords-card {
+  
+  border-radius: 8px;
+  padding: 20px;
+  width: 450px;
+  height: 350px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.competitor-keywords-card .card-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(157, 204, 237, 0.615);
+  font-size: 1.2rem;
+  border-radius: 5px;
+  padding: 5px;
+  height: 40px;
+  width: 100%;
+}
+
+.competitor-keywords-card .card-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.chart-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  
+}
+
+.bar-chart {
+  width: 95%; /* Adjust width as necessary */
+  height: 300px; /* Adjust the height of the bar chart */
+}
+
+/*  */

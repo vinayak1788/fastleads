@@ -1,12 +1,13 @@
 'use client';
 
-import { MagnifyingGlassIcon, BellIcon, BuildingOfficeIcon } from '@heroicons/react/24/outline';
+import { MagnifyingGlassIcon, BellIcon, BuildingOfficeIcon, Bars3Icon } from '@heroicons/react/24/outline'; // Import the hamburger icon
 import UserProfile from './UserProfile';
 import React, { useState } from 'react';
 import styles from '../../styles/Navbar.module.css';
 
 export default function Navbar({ toggleSidebar }) {
   const [showWorkspaceMenu, setShowWorkspaceMenu] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false); // State for sidebar visibility
 
   const workspaces = [
     { id: 1, name: 'Personal Workspace' },
@@ -14,10 +15,18 @@ export default function Navbar({ toggleSidebar }) {
     { id: 3, name: 'Project Workspace' }
   ];
 
+  const handleSidebarToggle = () => {
+    setSidebarOpen(prevState => !prevState); // Toggle the sidebar visibility
+    toggleSidebar(sidebarOpen); // If you need to handle sidebar visibility from parent
+  };
+
   return (
     <nav className={styles.navbar}>
       <div className={styles.header}>
-        <h1 className={styles.logo}>FASTLEAD99</h1>
+        <div className={styles.logoContainer}>
+          <Bars3Icon className={styles.hamburgerIcon} onClick={handleSidebarToggle} />  {/* Add hamburger icon */}
+          <h1 className={styles.logo}>FASTLEAD99</h1>
+        </div>
         <div className={styles.searchContainer}>
           <div className={styles.relative}>
             <MagnifyingGlassIcon className={styles.icon} />

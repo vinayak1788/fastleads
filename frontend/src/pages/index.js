@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Navbar from '../components/Layout/Navbar';
 import Sidebar from '../components/Layout/Sidebar';
 import '../styles/globals.css';
-import DashboardGrid from './DashboardGrid';
+import Dashboardpage from './Dashboardpage';
 
 const Home = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -27,7 +27,7 @@ const Home = () => {
         />
 
         <div className={`dashboardgrid ${isSidebarOpen ? 'sidebar-open' : ''}`}>
-          <DashboardGrid />
+          <Dashboardpage />
         </div>
       </div>
     </div>

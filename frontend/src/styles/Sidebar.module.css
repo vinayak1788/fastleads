@@ -7,13 +7,13 @@
   flex-direction: column;
   /* padding: 20px 20px 0; */
   font-size: 14px;
-  color: #4b5563; /* text-gray-700 */
-  background-color: rgba(241, 245, 249, 0.1); /* bg-slate-200 with opacity */
+  color: #070708; /* text-gray-700 */
+  /* background-color: rgba(241, 245, 249, 0.1); bg-slate-200 with opacity */
   /* border-right: 1px solid rgba(255, 255, 255, 0.6); */
   /* max-width: 228px; */
-  height: 100vh;
+  height: 200vh;
   /* overflow-y: auto; */
-  width: 15%;
+  width: 12%;
 }
 
 /* Dashboard item styles */
@@ -24,7 +24,7 @@
   /* gap: 12px; */
   padding: 10px 50px 10px 10px;
   min-height: 20px;
-  background-color: #4f46e5; /* Indigo background */
+  background-color: #281ee2; /* Indigo background */
   color: #f8fafc; /* text-zinc-100 */
   border-radius: 8px;
   white-space: nowrap;
@@ -50,7 +50,7 @@
 }
 
 .navItem:hover {
-  background-color: rgba(79, 70, 229, 0.1); /* Hover effect */
+  background-color: rgba(41, 30, 243, 0.1); /* Hover effect */
 }
 
 /* Navigation item content */
@@ -83,11 +83,7 @@
 }
 
 /* Dropdown icon */
-.dropdownIcon {
-  width: 20px;
-  height: 20px;
-  object-fit: contain;
-}
+
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -103,4 +99,36 @@
   .navItemLabel {
     font-size: 12px;
   }
+}
+/* Dropdown menu container */
+.dropdownMenu {
+  position: absolute; /* Position it relative to the parent element */
+  top: 100%; /* Place it directly below the button */
+  left: 0; /* Align it with the button */
+  margin-top: 8px; /* Add some spacing from the button */
+  background-color: #f1f5f9; /* Dropdown background color */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  z-index: 1; /* Ensure it's above other content */
+  /* display: flex; */
+  flex-direction: column;
+  padding: 8px;
+  width: 60%; /* Match the button width */
+}
+
+/* Individual dropdown item */
+.dropdownItem {
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.dropdownItem:hover {
+  background-color: rgba(22, 15, 147, 0.1); /* Hover effect */
+}
+
+/* Parent navItem to handle relative positioning */
+.navItem {
+  position: relative; /* Required for dropdown to position itself below */
 }
