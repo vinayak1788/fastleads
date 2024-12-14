@@ -1,8 +1,7 @@
 .social-media-inbox-card {
-  
-  border-radius: 8px;
+  width: 405px;
+  height: 390px;
   padding: 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
   align-items: center; /* Center-align the content */

@@ -1,55 +1,57 @@
 .push-market-content-card {
-  border: 1px solid #ccc;
-  border-radius: 2px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   padding: 10px;
   margin-bottom: 20px;
-  width: 400px;
-  height: 350px;
-  
-  color: #333;
+  width:95%;
+  height: 100%;
   font-family: Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  overflow: hidden;}
+  display: flex;
+  flex-direction: column;
+}
 
 .push-market-content-card .card-header {
   display: flex;
   justify-content: space-between;
-  background-color:darkgray;
+  background-color: darkgray;
   font-size: 1.2rem;
   border-radius: 5px;
   padding: 5px;
   height: 40px;
   width: 100%;
 }
+
 .expend-button {
   background-color: transparent;
   border: none;
-  position:left;
-  color: #ff0000;
+  color: #00bbff;
   font-size: 20px;
   cursor: pointer;
 }
+
 .push-market-content-card .card-body {
   display: flex;
   justify-content: space-between;
-  align-items: center;
- 
+  align-items: flex-start; /* Align items at the start */
   padding-top: 10px;
 }
 
 .content-push {
   padding-left: 10px;
-  width: 400px; /* Adjust width as necessary */
-  height: 280px; /* Adjust the height of the doughnut chart */
+  justify-content: space-between;
+  width: 640px; /* Adjust width as necessary */
+  height: 310px; /* Adjust the height of the doughnut chart */
 }
 
 .content-info {
-  /* Adjust width as necessary */
-  
-  font-size: 5px;
+  flex-shrink: 0; /* Prevent shrinking */
+  font-size: 12px;
   font-weight: bold;
   color: #2d2d2d;
-  text-align: left;
+  text-align: right;
+  /* Match height of card body */
+   /* Push to the right */
+  display: flex;
+ /* Vertically center the text */
+  justify-content:space-between; /* Align text to the right */
 }

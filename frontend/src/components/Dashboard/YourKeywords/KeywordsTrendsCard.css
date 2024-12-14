@@ -1,17 +1,12 @@
 .keywords-trends-card{
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   padding: 20px;
   margin-bottom: 20px;
-  width: 400px;
-  height: 350px;
-  
+  width: 610px;
+  height: 390px;
   color: #333;
   font-family: Arial, sans-serif;
   font-size: 16px;
-  line-height: 1.5;
-  overflow: hidden;
+ 
 }
 
 .keycard-header {

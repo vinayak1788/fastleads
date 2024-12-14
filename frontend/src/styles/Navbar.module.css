@@ -165,7 +165,7 @@
   margin-top: 8px;
   width: 100%;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
   padding: 4px 1px;
 }
 
@@ -273,4 +273,9 @@
   width: 148px;
   gap: 8px;
   margin: auto 0;
+}
+/* Update any instances of 'start' alignment to 'flex-start' */
+.navbar {
+  align-items: flex-start;
+  /* other properties */
 }

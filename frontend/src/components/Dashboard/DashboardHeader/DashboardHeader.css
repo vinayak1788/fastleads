@@ -1,0 +1,48 @@
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.widgets-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.widgets-button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.widgets-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #fff;
+  min-width: 200px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  z-index: 1;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.widgets-dropdown:hover .widgets-content {
+  display: block;
+}
+
+.widget-item {
+  display: block;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.widget-item:hover {
+  background-color: #f5f5f5;
+}

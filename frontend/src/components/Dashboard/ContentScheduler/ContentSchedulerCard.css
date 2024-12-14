@@ -1,8 +1,9 @@
 .content-scheduler-card {
-  
+  width: 405px;
+  height: 390px;
   border-radius: 8px;
   padding: 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+ 
 }
 
 .content-scheduler-card .card-header {
