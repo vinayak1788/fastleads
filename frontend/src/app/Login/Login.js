@@ -1,121 +1,140 @@
-import React, { useState } from 'react';
-import { useRouter } from 'next/router';
-import './Login.css';
+'use client';
 
-const Login = ({ onLoginSuccess }) => {
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import { FaGoogle, FaFacebook, FaMicrosoft, FaEye, FaEyeSlash } from 'react-icons/fa';
+import styles from '../../styles/Login.module.css';
+
+export default function Login() {
+  const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
-  const router = useRouter();
+  const [showPassword, setShowPassword] = useState(false);
+  const [rememberMe, setRememberMe] = useState(false);
+  const [isRegistering, setIsRegistering] = useState(false);
 
-  const validateForm = () => {
-    if (!email || !password) {
-      setError('Please fill in all fields');
-      return false;
+  useEffect(() => {
+    const savedEmail = localStorage.getItem('rememberedEmail');
+    if (savedEmail) {
+      setEmail(savedEmail);
+      setRememberMe(true);
     }
-    return true;
-  };
+  }, []);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError('');
+  const handleLogin = async (event) => {
+    event.preventDefault();
     
     try {
-      const formData = new URLSearchParams();
-      formData.append('username', email);
-      formData.append('password', password);
-
-      const res = await fetch('http://127.0.0.1:8000/api/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: formData,
-        credentials: 'include'
-      });
-
-      const data = await res.json();
-
-      if (res.ok) {
-        localStorage.setItem('token', data.access_token);
-        onLoginSuccess();
-        router.push('/dashboard');
+      if (email === 'info@fastleads99.com' && password === '123456') {
+        if (rememberMe) {
+          localStorage.setItem('rememberedEmail', email);
+        } else {
+          localStorage.removeItem('rememberedEmail');
+        }
+        alert('Login Successful!');
+        router.push('/Homepage');
       } else {
-        setError('Invalid credentials. Please try again.');
+        alert('Invalid credentials!');
       }
     } catch (error) {
-      setError('Connection failed. Please check your internet and try again.');
+      alert('Login failed. Please try again.');
     }
   };
 
-  const handleRegisterClick = () => {
+  const handleRegister = (event) => {
+    event.preventDefault();
     router.push('/register');
   };
 
-  const handleForgotPasswordClick = () => {
-    router.push('/forgot-password');
+  const handleSocialLogin = (provider) => {
+    alert(`${provider} login will be implemented soon!`);
   };
 
   return (
-    <div className="login-container">
-      <div className="login-box">
-        <h2>Welcome Back</h2>
-        {error && <div className="error-message">{error}</div>}
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="email">Email</label>
-            <input
-              id="email"
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              placeholder="Enter your email"
-              disabled={loading}
-              className={error ? 'error' : ''}
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="password">Password</label>
-            <input
-              id="password"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              placeholder="Enter your password"
-              disabled={loading}
-              className={error ? 'error' : ''}
-            />
-          </div>
+    <div className={styles.loginContainer}>
+      
+      <form onSubmit={isRegistering ? handleRegister : handleLogin} className={styles.loginForm}>
+      <div className={styles.loginHeader}><h1>Fastleads99</h1></div>
+        <h2>{isRegistering ? 'Register' : 'Login'}</h2>
+        
+        <div className={styles.formGroup}>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Email"
+            required
+          />
+        </div>
+
+        <div className={`${styles.formGroup} ${styles.passwordGroup}`}>
+          <input
+            type={showPassword ? "text" : "password"}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Password"
+            required
+          />
           <button 
-            type="submit" 
-            disabled={loading}
-            className={loading ? 'loading' : ''}
+            type="button" 
+            className={styles.showPasswordBtn}
+            onClick={() => setShowPassword(!showPassword)}
           >
-            {loading ? 'Logging in...' : 'Login'}
+            {showPassword ? <FaEyeSlash /> : <FaEye />}
           </button>
-          <div className="additional-buttons">
-            <button 
-              type="button" 
-              onClick={handleRegisterClick}
-              disabled={loading}
-            >
-              Register
-            </button>
-            <button 
-              type="button" 
-              onClick={handleForgotPasswordClick}
-              disabled={loading}
-            >
-              Forgot Password
-            </button>
-          </div>
-        </form>
-      </div>
+        </div>
+
+        <div className={styles.formOptions}>
+          <label className={styles.rememberMe}>
+            <input
+              type="checkbox"
+              checked={rememberMe}
+              onChange={(e) => setRememberMe(e.target.checked)}
+            />
+            Remember me
+          </label>
+          <a href="#" className={styles.forgotPassword}>Forgot Password?</a>
+        </div>
+
+        <button type="submit" className={styles.button}>
+          {isRegistering ? 'Register' : 'Login'}
+        </button>
+
+        <div className={styles.socialLogin}>
+          <button 
+            type="button" 
+            onClick={() => handleSocialLogin('Google')} 
+            className={`${styles.socialButton} ${styles.google}`}
+          >
+            <FaGoogle /> Google
+          </button>
+          <button 
+            type="button" 
+            onClick={() => handleSocialLogin('Facebook')} 
+            className={`${styles.socialButton} ${styles.facebook}`}
+          >
+            <FaFacebook /> Facebook
+          </button>
+          <button 
+            type="button" 
+            onClick={() => handleSocialLogin('Microsoft')} 
+            className={`${styles.socialButton} ${styles.microsoft}`}
+          >
+            <FaMicrosoft /> Microsoft
+          </button>
+        </div>
+
+        <p className={styles.toggleForm}>
+          {isRegistering ? 'Already have an account?' : "Don't have an account?"}{' '}
+          <button 
+            type="button"
+            className={styles.toggleBtn}
+            onClick={() => setIsRegistering(!isRegistering)}
+          >
+            {isRegistering ? 'Login' : 'Register'}
+          </button>
+        </p>
+      </form>
     </div>
   );
-};
-
-export default Login;
+}

@@ -5,6 +5,8 @@ import Navbar from '../components/Layout/Navbar';
 import Sidebar from '../components/Layout/Sidebar';
 import '../styles/globals.css';
 import Dashboardpage from './Dashboardpage';
+import Login from '../app/Login/Login';
+
 const Home = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -19,8 +21,11 @@ const Home = () => {
 
   return (
     <div className="container">
-    
-          <div className="navHeader">
+      {!isLoggedIn ? (
+        <Login onLoginSuccess={handleLoginSuccess} />
+      ) : (
+        <>
+          {/* <div className="navHeader">
             <Navbar toggleSidebar={handleSidebarToggle} />
           </div>
 
@@ -32,10 +37,12 @@ const Home = () => {
             />
 
             <div className={`dashboardgrid ${isSidebarOpen ? 'sidebar-open' : ''}`}>
-              <Dashboardpage />
-            </div>
-      </div>
-    </div>
+        //       <Dashboardpage /> */}
+             {/* </div> */}
+        //   </div>
+        // </>
+    //   )}
+     </div>
   );
 };
 

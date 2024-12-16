@@ -197,3 +197,100 @@ DndProvider.drak {
 }
 
 /* and add to' widget'  function also    what can i change   */
+
+/* LOGIN.MODULE.CSS */
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(to bottom right, #e0f2f7, #e0f7fa);
+  padding: 20px;
+  font-family: 'Arial', sans-serif; /* Added fallback font */
+}
+
+.loginHeading {
+  color: #3f51b5;
+  margin-bottom: 30px; /* Increased margin for better spacing */
+  font-size: 2em; /* Larger heading */
+  text-align: center; /* Center alignment for better readability */
+}
+
+.formGroup {
+  margin-bottom: 20px;
+  width: 90%; /* Adjusted for responsiveness */
+  max-width: 400px; /* Ensures a maximum width */
+}
+
+.inputField {
+  width: 100%;
+  padding: 15px; /* Increased padding */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 1.1em; /* Slightly larger font */
+}
+
+.showPassword {
+  cursor: pointer;
+  float: right;
+  margin-top: -35px; /* Adjusted for padding and alignment */
+  margin-right: 10px;
+  font-size: 1.2em; /* Improved visibility for the icon */
+}
+
+.checkboxGroup {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 1em;
+}
+
+.forgotPassword {
+  color: #3f51b5;
+  text-decoration: none;
+  margin-bottom: 10px;
+  display: block;
+  text-align: right;
+  font-size: 1em;
+  transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.forgotPassword:hover {
+  color: #1a237e; /* Slightly darker blue for hover */
+}
+
+.loginButton {
+  background-color: #3f51b5;
+  color: white;
+  padding: 15px 20px; /* Increased padding */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1.2em; /* Larger font for the button */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.loginButton:hover {
+  background-color: #1a237e; /* Darker blue on hover */
+}
+
+.createAccount {
+  margin-top: 20px;
+  text-align: center;
+  color: #666;
+  font-size: 1em;
+}
+
+.createAccount a {
+  color: #3f51b5;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.createAccount a:hover {
+  color: #1a237e; /* Darker blue for hover */
+}
