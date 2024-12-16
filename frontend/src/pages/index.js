@@ -25,7 +25,7 @@ const Home = () => {
         <Login onLoginSuccess={handleLoginSuccess} />
       ) : (
         <>
-          {/* <div className="navHeader">
+          <div className="navHeader">
             <Navbar toggleSidebar={handleSidebarToggle} />
           </div>
 
@@ -37,12 +37,12 @@ const Home = () => {
             />
 
             <div className={`dashboardgrid ${isSidebarOpen ? 'sidebar-open' : ''}`}>
-        //       <Dashboardpage /> */}
-             {/* </div> */}
-        //   </div>
-        // </>
-    //   )}
-     </div>
+              <Dashboardpage />
+            </div>
+          </div>
+        </>
+      )}
+    </div>
   );
 };
 
