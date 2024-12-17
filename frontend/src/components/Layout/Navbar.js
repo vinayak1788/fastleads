@@ -1,5 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from '../../styles/Navbar.module.css';
+
+import Profile from './Profile';
+
+
 
 // UserMenuItem Component
 function UserMenuItem({ icon, text }) {
@@ -53,7 +57,8 @@ const UserProfile = ({ name, role, image, onClick }) => {
   return (
     <div className={styles.profileSection} onClick={onClick}>
       <div className={styles.profileInfo}>
-        <img
+        <Profile />
+        {/* <img
           loading="lazy"
           src={image}
           className={styles.profileImage}
@@ -68,7 +73,7 @@ const UserProfile = ({ name, role, image, onClick }) => {
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/d2ae91a05b275dc93b76d55896dc9fa5eac7114adde3a987a2fd7742381d7101?placeholderIfAbsent=true&apiKey=1fcf7458f0984c828835e605ab2bf74b"
           className={styles.dropdownIcon}
           alt="Dropdown"
-        />
+        /> */}
       </div>
     </div>
   );
@@ -82,72 +87,78 @@ const NavigationBar = () => {
   const toggleDropdown = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+    const changeTheme = (newTheme) => {
+      setTheme(newTheme);
+      document.body.className = `theme-${newTheme}`; // Add class to body
+      localStorage.setItem('fastleads-theme', newTheme); // Store theme preference
+    };
 
-  const changeTheme = (newTheme) => {
-    setTheme(newTheme); // Update the theme state
-  };
-
-  return (
-    <nav className={`${styles.container} ${styles[theme]}`}>
-      <div className={styles.wrapper}>
-        <div className={styles.header}>
-          <div className={styles.logoSection}>
-            <div className={styles.brandName}>
-              <span>FastLeads</span>99
+    useEffect(() => {
+      const savedTheme = localStorage.getItem('fastleads-theme') || 'light';
+      setTheme(savedTheme);
+      document.body.className = `theme-${savedTheme}`;
+    }, []);
+    return (
+      <nav className={`${styles.container} ${styles[theme]}`}>
+        <div className={styles.wrapper}>
+          <div className={styles.header}>
+            <div className={styles.logoSection}>
+              <div className={styles.brandName}>
+                <span>FastLeads</span>99
+              </div>
+              <SearchBar />
             </div>
-            <SearchBar />
-          </div>
 
-          <div className={styles.mainContent}>
-            <div className={styles.actionButtons}>
-              <div className={styles.buttonWrapper}>
-                <ActionButton
-                  icon="https://cdn.builder.io/api/v1/image/assets/TEMP/6aad46e0a4574f558cca2c254097357409535627c1e2072b81e251198da2ae10?placeholderIfAbsent=true&apiKey=1fcf7458f0984c828835e605ab2bf74b"
-                  label="Buy now"
-                  variant="buy"
-                />
-                <ActionButton
-                  icon="https://cdn.builder.io/api/v1/image/assets/TEMP/4b24c1b57a426dac2c08011d85c15cde399233547dd9c32a96173a190cd4b3dc?placeholderIfAbsent=true&apiKey=1fcf7458f0984c828835e605ab2bf74b"
-                  label="Invite"
-                  variant="invite"
+            <div className={styles.mainContent}>
+              <div className={styles.actionButtons}>
+                <div className={styles.buttonWrapper}>
+                  <ActionButton
+                    icon="https://cdn.builder.io/api/v1/image/assets/TEMP/6aad46e0a4574f558cca2c254097357409535627c1e2072b81e251198da2ae10?placeholderIfAbsent=true&apiKey=1fcf7458f0984c828835e605ab2bf74b"
+                    label="Buy now"
+                    variant="buy"
+                  />
+                  <ActionButton
+                    icon="https://cdn.builder.io/api/v1/image/assets/TEMP/4b24c1b57a426dac2c08011d85c15cde399233547dd9c32a96173a190cd4b3dc?placeholderIfAbsent=true&apiKey=1fcf7458f0984c828835e605ab2bf74b"
+                    label="Invite"
+                    variant="invite"
+                  />
+                </div>
+                <img
+                  loading="lazy"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/820c3e97892c4816f9ec0482e42a2822cba7f8a190067d6910f395fa42d39f44?placeholderIfAbsent=true&apiKey=1fcf7458f0984c828835e605ab2bf74b"
+                  className={styles.notificationIcon}
+                  alt="Notifications"
                 />
               </div>
-              <img
-                loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/820c3e97892c4816f9ec0482e42a2822cba7f8a190067d6910f395fa42d39f44?placeholderIfAbsent=true&apiKey=1fcf7458f0984c828835e605ab2bf74b"
-                className={styles.notificationIcon}
-                alt="Notifications"
+
+              {/* User Profile with dropdown toggle */}
+              <UserProfile
+                name="Jane Cooper"
+                role="Manager"
+                image="https://cdn.builder.io/api/v1/image/assets/TEMP/55938268bcdac80412255a2b5434dc6647804e83bbb10abdc70c9818c04ed309?placeholderIfAbsent=true&apiKey=1fcf7458f0984c828835e605ab2bf74b"
+                onClick={toggleDropdown}  // Toggle dropdown on profile click
               />
             </div>
-
-            {/* User Profile with dropdown toggle */}
-            <UserProfile
-              name="Jane Cooper"
-              role="Manager"
-              image="https://cdn.builder.io/api/v1/image/assets/TEMP/55938268bcdac80412255a2b5434dc6647804e83bbb10abdc70c9818c04ed309?placeholderIfAbsent=true&apiKey=1fcf7458f0984c828835e605ab2bf74b"
-              onClick={toggleDropdown}  // Toggle dropdown on profile click
-            />
           </div>
-        </div>
 
-        {/* UserMenu - Dropdown */}
-        {isMenuOpen && (
-          <div className={styles.menuContainer}>
-            <div className={styles.menuWrapper}>
-              <div className={styles.menuContent}>
-                <UserMenuItem icon={menuItems[0].icon} text={menuItems[0].text} />
-                <ThemeSelector onChangeTheme={changeTheme} />
-                {menuItems.slice(1).map((item, index) => (
-                  <UserMenuItem key={index} icon={item.icon} text={item.text} />
-                ))}
+          {/* UserMenu - Dropdown */}
+          {/* {isMenuOpen && (
+            <div className={styles.menuContainer}>
+              <div className={styles.menuWrapper}>
+                <div className={styles.menuContent}>
+                  <UserMenuItem icon={menuItems[0].icon} text={menuItems[0].text} />
+                  <ThemeSelector onChangeTheme={changeTheme} />
+                  {menuItems.slice(1).map((item, index) => (
+                    <UserMenuItem key={index} icon={item.icon} text={item.text} />
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-        )}
-      </div>
-    </nav>
-  );
-};
+          )} */}
+        </div>
+      </nav>
+    );
+  };
 
 // ActionButton Component
 const ActionButton = ({ icon, label, variant }) => {

@@ -294,3 +294,26 @@ DndProvider.drak {
 .createAccount a:hover {
   color: #1a237e; /* Darker blue for hover */
 }
+/* Global styles (e.g., in styles/globals.css) */
+/* Navbar.module.css */
+:global(:root.theme-light) {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+}
+
+:global(:root.theme-dark) {
+  --bg-color: #000000;
+  --text-color: #ffffff;
+}
+
+:global(:root.theme-blue) {
+  --bg-color: #1e3a8a;
+  --text-color: #ffffff;
+}
+
+/* Ensure your component styles use these variables */
+.container {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}

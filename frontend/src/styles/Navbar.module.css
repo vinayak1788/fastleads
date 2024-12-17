@@ -1,8 +1,28 @@
 .container {
   width: 100%;
-  background-color: #fff;
-  padding: 5px;
-  position: sticky;
+
+
+
+
+  background-color: #ffffff; /* Light theme default */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+/* Theme variations */
+.light {
+  background-color: #ffffff;
+}
+
+.dark {
+  background-color: #1a1a1a;
+}
+
+.blue {
+  background-color: #f0f7ff;
 }
 
 .wrapper {
@@ -279,3 +299,10 @@
   align-items: flex-start;
   /* other properties */
 }
+
+
+.container {
+  background-color: rgb(204, 204, 224);
+  color: var(--text-color);
+}
+
