@@ -2,6 +2,7 @@ import React from 'react';
 import DashboardCard from '../../DashboardCard';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import './LeadAndCustomizationCard.css';
+import Link from 'next/link';
 
 const LeadAndCustomizationCard = () => {
   // Chart data (can be dynamic, or fetched from an API)
@@ -19,12 +20,20 @@ const LeadAndCustomizationCard = () => {
       {/* Lead Generation Overview Section */}
       <div className="leadcard1">
       <DashboardCard className="lead-overview-card">
-        <div className="leadcard-header">Lead Generation Overview
-            {/* Adding a button with a link href */}
-       <a href="/another-page" className="close-button">
+        {/* <div className="leadcard-header">Lead Generation Overview
+            
+       <Link href="/Leads" className="close-button">
           <button>↗</button>
-        </a>
-        </div>
+        </Link>
+        </div> */}
+        <div className="leadcard-header">
+  Lead Generation Overview
+  {/* Adding a button with a link href */}
+  <Link href="/Leads" className="close-button">
+    <button>↗</button>
+  </Link>
+</div>
+        
         <div className="card-body">
           <div className="lead-overview-content">
             <div className="total-leads">
