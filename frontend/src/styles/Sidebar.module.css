@@ -3,14 +3,17 @@
 /* Sidebar container styles */
 .sidebarContainer {
   display: flex;
+  background-color: #DEDEFA;
   flex-direction: column;
   font-size: 14px;
   color: #0a0202;/*text color*/
   /* Set a large height to ensure scrollable content */
    /* Set the width of the sidebar */
-  
-  padding: 2px 5px 5px;
-  border-radius: 20px;
+  height: 100vh;
+  width: 200px;
+  padding-left: 30px;
+  padding-top: 20px;
+
   /* Enable vertical scrolling if content overflows */
 }
 
@@ -19,60 +22,58 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 10px 50px 10px 10px;
   
-
-  border-radius: 8px;
   white-space: nowrap;
   font-weight: bold;
-  
   width: 100%;
+  overflow: hidden;
 }
 
 /* Navigation item styles */
 .navItem {
-  align-items: center;
-  padding: 2px;
-  margin-top: 8px;
-  border-radius: 8px;
-  
   cursor: pointer;
-  ;
-  display: flex;
-  justify-content: space-evenly;
-  width: 100%;
-  max-width: 170px; /* Limiting width for uniformity */
 }
 
-.navItem:hover {
-  background-color: lightblue; /* Hover effect */
-}
-
-/* Navigation item content */
 .navItemContent {
   display: flex;
-  
-  gap: 10px;
   align-items: center;
-  width: 100%;
+  padding: 12px;
+  transition: all 0.3s ease;
 }
 
-.navItem::-webkit-scrollbar {
-  display: none;
+.navItemContent:hover {
+  background-color: #0066ff;
+  border-radius: 15px;
+  margin-top: 20px;
+  margin-right: 20px;
 }
 
-/* Icon styles */
+.navItemContent:hover .navItemLabel {
+  color: white;
+}
+
+.navItemContent:hover .navItemIcon {
+  filter: brightness(0) invert(1);
+}
+
 .navItemIcon {
-  width: 25px;
-  color: #070708;
-  height: 25px;
-  object-fit: contain;
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
 }
 
 .navItemLabel {
-  margin: auto 0;
-  display: flex;
-  white-space: nowrap;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.dropdownIcon {
+  margin-left: auto;
+  transition: filter 0.3s ease;
+}
+
+.navItemContent:hover .dropdownIcon {
+  filter: brightness(0) invert(1);
 }
 
 /* Dropdown menu container */

@@ -2,7 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
+  "/Engagement_Feed": "pages/Engagement_Feed.js",
   "/Homepage": "pages/Homepage.js",
-  "/": "pages/index.js",
-  "/Leads": "pages/Leads.js"
+  "/SocialInbox": "pages/SocialInbox.js"
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { Pie } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'; // Import required elements
 import DashboardCard from '../../DashboardCard'; // Import the reusable DashboardCard component
@@ -25,9 +26,9 @@ const KeywordsTrendsCard = () => {
       <div className="keycard-header">
         <span>Your Keywords, Trends, Insights</span>
         {/* Adding a button with a link href */}
-        <a href="/another-page" className="close-button">
+        <Link href="/Keywords_Trends" className="close-button">
           <button>↗</button>
-        </a>
+        </Link>
       </div>
 
       {/* Pie chart without the expand functionality */}

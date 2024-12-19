@@ -146,7 +146,7 @@ DndProvider.drak {
   top: 0;
   width: 100%;
   z-index: 100;
-  background: var(--navbar-color);
+  background-color: linear-gradient(to right, #F5F3FC, #FDFBED);
   box-shadow: 0 2px 4px var(--box-shadow-color);
 }
 

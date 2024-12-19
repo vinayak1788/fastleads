@@ -1,0 +1,36 @@
+.influencersContainer {
+    background: linear-gradient(to right, #B9C7FD, #E5EEDC);    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .influencersContainer h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .influencerTable {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .influencerTable th,
+  .influencerTable td {
+    border: 0.5px solid #000000;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .influencerTable th {
+    background-color: transparent;
+  }
+  
+  .profilePicture {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+  }
+  

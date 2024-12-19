@@ -1,0 +1,33 @@
+.topbar-container {
+  background: transparent;
+  padding: 16px;
+  display: flex;
+  height: 20px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid blueviolet;
+  margin-top: 5px;
+  
+}
+
+.topbar-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 1px solid blueviolet;
+  background: transparent;
+  
+}
+
+.topbar-icon {
+  font-size: 1.8rem;
+  color: blueviolet;
+}
+
+.topbar-heading {
+  margin: 0;
+  font-size: 1.2rem;
+  color: blueviolet;
+  font-weight: 500;
+  font-family: "inter,sans-serif";
+}

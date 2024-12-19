@@ -1,0 +1,41 @@
+.commentsContainer {
+    background: linear-gradient(to right, #B9C7FD, #E5EEDC);    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .commentsContainer h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .commentsContainer ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .commentsContainer li {
+    border-bottom: 1px solid #f0f0f0;
+    padding: 10px 0;
+  }
+  
+  .commentsContainer li:last-child {
+    border-bottom: none;
+  }
+  
+  .commentsContainer p {
+    margin: 5px 0;
+    font-size: 0.95em;
+    color: #555;
+  }
+  
+  .commentsContainer .error {
+    color: red;
+    margin-top: 10px;
+    font-size: 0.9em;
+    text-align: center;
+  }
+  

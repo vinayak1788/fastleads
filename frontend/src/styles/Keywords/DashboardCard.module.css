@@ -1,0 +1,171 @@
+.card {
+    background: linear-gradient(to right, #E4E4FD, #CEDCF7,#F4F7E3);
+    padding: 0px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    color: #333;
+    min-height: 400px; /* Added this line to increase height */
+    height: 100%; /* Added this line for flexible height */
+  }
+    
+ .navbar {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 1rem 1.5rem;
+   background-color: #F8E1C1;
+   border-bottom: 1px solid #e9ecef;
+   border-radius: 8px 8px 0 0;
+ }
+     .navTitle {
+   font-size: 1.25rem;
+   font-weight: 600;
+   color: #2d3748;
+   margin: 0;
+   display: flex;
+   align-items: center;
+}
+ .closeButton {
+   background: none;
+   border: none;
+   cursor: pointer;
+   padding: 0.5rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   color: #718096;
+   transition: color 0.2s ease;
+ }
+.content {
+  display: flex;
+   
+  padding: 2rem;
+  gap: 2rem;
+  height: calc(100% - 60px); /* Subtract navbar height */
+}
+
+.leftSection {
+  flex: 0 0 300px; /* Fixed width instead of flex: 1 */
+  display: flex;
+  justify-content: flex-start; /* Align to left instead of center */
+  align-items: center;
+  padding-left: 100px;
+  
+}
+.pieChart {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  margin-right: 100px;    /* Add margin to create space for lines */
+  background: conic-gradient(
+    #61BD8E 0% 6%,
+    #4ECDC4 6% 24%,
+    #45B7D1 24% 55%,
+    #96CEB4 55% 100%
+  );
+}
+      .legendContainer {
+        position: absolute;
+        left: 300px;           /* Adjust based on your layout */
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 25px;             /* Increased gap between items */
+      }
+
+      .legendColumn {
+        display: flex;
+        flex-direction: column;
+        margin-left: 8px;
+      }
+
+      .legendPercentage {
+        font-weight: bold;
+        font-size: 1.1em;
+        color: #333;
+        padding-left: 15px;
+        
+      }
+
+      .legendText {
+        font-size: 0.9em;
+        color: #666;
+      }
+
+      .legendItem {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 12px;
+      }
+
+    
+.rightSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  position: relative; /* Add this line */
+}
+  .totalScore {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 1rem;
+    margin-top: -25rem; /* Changed from auto to negative value */
+    margin-right: 60px;
+  }
+
+  .totalScore h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2915F9;
+    margin: 0;
+  }
+
+  .totalScore span {
+    font-size: 1rem;
+    font: bold 20px;
+    color: #000000;
+  }
+.barChart {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  padding: 1rem;
+  margin-top: 70px;
+  margin-left: 12rem; /* Add this line to move chart right */
+  max-width: 80%; /* Add this to ensure chart doesn't stretch too wide */
+}  
+.bar {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 50%;
+    position: relative;
+}
+
+.verticalLine {
+    position: absolute;
+    left: 90px; /* Adjust this value based on your barLabel width */
+    height: 15px;
+    width: 1px;
+    background-color: #919FAB;
+}
+
+  .barLabel {
+    min-width: 80px;
+    font-weight: 500;
+    color: black;
+  }
+
+
+  .barFill {
+    height: 15px;
+    border-radius:    0 15px 15px 0;
+    transition: width 0.3s ease;
+  }

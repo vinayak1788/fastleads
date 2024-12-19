@@ -24,7 +24,7 @@ const SocialMediaInboxCard = () => {
     <DashboardCard className="social-media-inbox-card">
       <div className="card-header"><span>Social Media Inbox</span>
         {/* Adding a button with a link href */}
-       <a href="/another-page" className="close-button">
+       <a href="/SocialInbox" className="close-button">
           <button>↗</button>
         </a></div>
       <div className="card-body">

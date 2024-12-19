@@ -1,0 +1,80 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-height: max-content;
+
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  padding: 10px;
+  height: 100%;
+}
+  .sidebar {
+    width: 60px;
+    background-color: #B8B1EC;
+    margin-right: 10px;
+    padding: 30px 0; /* Add padding top/bottom */
+    border-radius: 10px;
+    
+  }
+
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center icons horizontally */
+  }
+
+  .sidebar li {
+    margin-bottom: 25px;
+    width: 100%; /* Full width for click area */
+    display: flex;
+    justify-content: center; /* Center icon in li */
+    cursor: pointer; /* Add pointer cursor */
+    padding: 8px 0; /* Add padding for better click area */
+  }
+
+  .platform-icon {
+    font-size: 24px;
+    color: #666;
+    transition: color 0.3s ease; /* Smooth color transition */
+  }
+
+  /* Add hover effect */
+  .sidebar li:hover .platform-icon {
+    color: var(--platform-color, #666);
+  }
+
+  /* Style for active platform */
+  .sidebar li.active .platform-icon {
+    color: var(--platform-color, #666);
+  }
+.main-content {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  flex: 1;
+  border-radius: 30px;
+  
+  
+}
+
+.content-section {
+  flex: 1;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.content-section.comments {
+  flex: 70%;
+}
+
+.content-section.alerts {
+  flex: 30%;
+}

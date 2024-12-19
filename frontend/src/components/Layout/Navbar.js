@@ -104,7 +104,7 @@ const NavigationBar = () => {
           <div className={styles.header}>
             <div className={styles.logoSection}>
               <div className={styles.brandName}>
-                <span>FastLeads</span>99
+                <span>FASTLEADS99</span>
               </div>
               <SearchBar />
             </div>

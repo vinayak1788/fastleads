@@ -1,0 +1,62 @@
+/* Container for Cards */
+.cardsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+  gap: 20px; /* Space between cards */
+  padding: 20px;
+}
+
+/* Card Styling */
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  max-width: 300px; /* Prevent cards from being too wide */
+  margin: auto; /* Center-align single cards in their grid space */
+}
+
+/* Sentiment Colors */
+.positive {
+  border-left: 5px solid #4CAF50;
+}
+
+.neutral {
+  border-left: 5px solid #FFC107;
+}
+
+.negative {
+  border-left: 5px solid #F44336;
+}
+
+/* Hover Effect */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Title and Content Styling */
+.card h3 {
+  margin: 0;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.card p {
+  margin: 10px 0;
+  font-size: 0.9em;
+  color: #555;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  .cardsContainer {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .card {
+    padding: 15px;
+  }
+}
