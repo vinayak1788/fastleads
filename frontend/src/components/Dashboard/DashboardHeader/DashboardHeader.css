@@ -46,3 +46,7 @@
 .widget-item:hover {
   background-color: #f5f5f5;
 }
+
+.Headerbutton {
+  border-radius: 20px;
+}

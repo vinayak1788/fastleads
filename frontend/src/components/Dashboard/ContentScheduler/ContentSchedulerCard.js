@@ -40,7 +40,7 @@ const ContentSchedulerCard = () => {
     <DashboardCard className="content-scheduler-card">
            <div className="card-header">Content Scheduler
             {/* Adding a button with a link href */}
-        <a href="/another-page" className="close-button">
+        <a href="/ContentScheduler" className="close-button">
           <button>↗</button> </a>  
 
       </div>

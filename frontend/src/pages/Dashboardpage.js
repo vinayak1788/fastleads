@@ -9,6 +9,7 @@ import SocialMediaInboxCard from '../components/Dashboard/SocialMediaInbox/Socia
 import ContentSchedulerCard from '../components/Dashboard/ContentScheduler/ContentSchedulerCard';
 import LeadOverviewCard from '../components/Dashboard/LeadAndCustomization/LeadAndCustomizationCard';
 import DashboardHeader from '../components/Dashboard/DashboardHeader/DashboardHeader';
+import ContentScheduler from './ContentScheduler';
 import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
 import "../styles/Dashboard.css";
@@ -44,7 +45,7 @@ const DashboardPage = () => {
     ...(visibleCards.campaign ? [{ i: 'campaign', x: 6, y: 4, w: 6, h: 4 }] : []),
     ...(visibleCards.engagement ? [{ i: 'engagement', x: 0, y: 8, w: 4, h: 4 }] : []),
     ...(visibleCards.social ? [{ i: 'social', x: 4, y: 8, w: 4, h: 4 }] : []),
-    ...(visibleCards.scheduler ? [{ i: 'scheduler', x: 8, y: 8, w: 4, h: 4 }] : []),
+    ...(visibleCards.scheduler ? [{ i: 'ContentScheduler', x: 8, y: 8, w: 4, h: 4 }] : []),
     ...(visibleCards.lead ? [{ i: 'lead', x: 0, y: 12, w: 12, h: 4 }] : [])
   ];
 
@@ -98,8 +99,8 @@ const DashboardPage = () => {
           </div>
         )}
         {visibleCards.scheduler && (
-          <div key="scheduler">
-            <ContentSchedulerCard onClose={() => toggleCard('scheduler')} />
+          <div key="ContentScheduler">
+            <ContentSchedulerCard onClose={() => toggleCard('ContentScheduler')} />
           </div>
         )}
         {visibleCards.lead && (

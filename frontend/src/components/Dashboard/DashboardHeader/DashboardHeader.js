@@ -34,10 +34,7 @@ const DashboardHeader = ({ visibleCards, onToggleCard }) => {
       icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/6eb0e158bca254f394363e9838c588e176ffeeeef56f1c599fb32fae0abf845f",
       label: "Rating",
     },
-    {
-      label: "Widget",
-      icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/6eb0e158bca254f394363e9838c588e176ffeeeef56f1c599fb32fae0abf845f",
-    },
+  
   ];
 
   const navigationRight = [
@@ -57,7 +54,7 @@ const DashboardHeader = ({ visibleCards, onToggleCard }) => {
 
   const NavigationButton = ({ icon, label }) => {
     return (
-      <button className="button">
+      <button className="Headerbutton">
         <div className="buttonContent">
           {icon && (
             <Image

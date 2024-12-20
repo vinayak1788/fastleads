@@ -3,7 +3,7 @@
 /* Sidebar container styles */
 .sidebarContainer {
   display: flex;
-  background-color: #DEDEFA;
+  
   flex-direction: column;
   font-size: 14px;
   color: #0a0202;/*text color*/

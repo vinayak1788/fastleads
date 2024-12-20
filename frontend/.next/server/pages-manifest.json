@@ -3,8 +3,7 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
-  "/Homepage": "pages/Homepage.js",
-  "/Leads": "pages/Leads.js",
   "/Keywords_Trends": "pages/Keywords_Trends.js",
-  "/SocialInbox": "pages/SocialInbox.js"
+  "/Competitors": "pages/Competitors.js",
+  "/Leads": "pages/Leads.js"
 }

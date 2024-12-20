@@ -67,7 +67,7 @@ const navigationItems = [
   {
     icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/814ae01b6f8a191c1bf671e3dcd7cc902c668c1a4dc7fa341a078fd7431f1398?placeholderIfAbsent=true&apiKey=0bda2653b3104374a175304f95be6d12",
     label: "Content Scheduler",
-    path: "../content-scheduler",
+    path: "../ContentScheduler",
   },
 ];
 

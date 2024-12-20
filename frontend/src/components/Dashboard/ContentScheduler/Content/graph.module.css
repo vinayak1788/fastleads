@@ -1,0 +1,74 @@
+.container {
+  padding: 1rem;
+  width: 100%;
+  margin: 0 auto; /* Simplified margin */
+  max-width: 1200px;
+}
+
+.card {
+  background-color: #dae1fd;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  max-width: 1200px;
+  height: 300px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainTitle {
+  font-size: 0.875rem; /* More readable size than 0.5rem */
+  color: #333;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.graphsContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  width: 100%;
+  height: 100%;
+  align-items: flex-start;
+  padding-top: 0;
+}
+
+.graphBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+.graphTitle {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.chartWrapper {
+  width: 75%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.donut-chart {
+  width: 200px;
+  height: 150px;
+  --donut-thickness: 12px;
+  stroke-width: 1px;
+} /* Removed extra line space */
+
+@media (max-width: 768px) {
+  .graphsContainer {
+    grid-template-columns: 1fr;
+  }
+  .chartWrapper {
+    height: 150px;
+  }
+} /* Fixed indentation */
