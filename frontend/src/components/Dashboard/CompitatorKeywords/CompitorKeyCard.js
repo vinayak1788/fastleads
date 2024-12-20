@@ -49,7 +49,7 @@ const CompetitorKeywordsCard = () => {
     <DashboardCard className="competitor-keywords-card">
       <div className="card-header">Your Competitor Keywords & Trends
         {/* Adding a button with a link href */}
-        <a href="/another-page" className="close-button">
+        <a href="/Competitors" className="close-button">
           <button>↗</button>
         </a>
       </div>

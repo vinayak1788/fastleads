@@ -20,7 +20,7 @@ const navigationItems = [
   {
     icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/b4dcc8a25406ce3e6a29ed73b822de789beb215144a9958ada7eb0612c0cb3b7?placeholderIfAbsent=true&apiKey=0bda2653b3104374a175304f95be6d12",
     label: "Competitor",
-    path: "../competitor",
+    path: "../Competitors",
   },
   {
     icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/2eec28e61825a14ba9ebc7bc764553ca5ae9cdf40a6d7635a4717ab08d4e3f44?placeholderIfAbsent=true&apiKey=0bda2653b3104374a175304f95be6d12",

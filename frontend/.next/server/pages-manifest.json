@@ -2,7 +2,6 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/Engagement_Feed": "pages/Engagement_Feed.js",
-  "/Homepage": "pages/Homepage.js",
-  "/SocialInbox": "pages/SocialInbox.js"
+  "/": "pages/index.js",
+  "/Homepage": "pages/Homepage.js"
 }

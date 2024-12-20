@@ -1,11 +1,12 @@
 .keywords-trends-card{
-  padding: 20px;
+  
   margin-bottom: 20px;
   width: 610px;
   height: 390px;
   color: #333;
   font-family: Arial, sans-serif;
   font-size: 16px;
+  overflow: hidden;
  
 }
 
@@ -15,7 +16,7 @@
   background-color: rgb(234, 215, 190);
   font-size: 1.2rem;
   border-radius: 5px;
-  /* padding: 5px; */
+  padding: 5px;
   height: 40px;
   width: 100%;
 }

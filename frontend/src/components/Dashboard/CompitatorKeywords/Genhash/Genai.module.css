@@ -1,0 +1,101 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(to right, #d4ccfb, #c5d2fd);
+  border-radius: 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  border-radius: 20px;
+  background-color: pink;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: bold;
+  color: #007bff;
+  padding: 20px;
+  
+}
+
+.hashCard {
+  padding: 2rem;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  background-color: gray;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.card {
+  background-color: whitesmoke;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.cardNavbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 0.5rem 0;
+  margin-bottom: 1rem;
+}
+
+.platformNavbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.date {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.cardBody {
+  color: #444;
+}
+
+.content {
+  line-height: 1.5;
+}

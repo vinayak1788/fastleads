@@ -1,0 +1,134 @@
+.hashCard {
+  background: linear-gradient(to right, #D4CCFB, #C5D2FD);
+  border-radius: 15px;
+  padding: 20px;
+  width: 40%;
+  display: flex;
+  margin-right: 10px;
+  margin-left: -15px;
+  height: 1000px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  font-family: Arial, sans-serif; /* Added for consistent typography */
+}
+
+  .cardContent {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: flex-start;
+gap: 1.2rem;
+width: 90%;
+padding-left: 20px;
+height: 900px;
+position: relative; /* Add this */
+}
+
+
+.emptyBar {
+background-color: #96A6C6;
+border-radius: 30px;
+padding: 10px;
+width: 100%;
+display: flex;
+justify-content: center;
+margin: 0 auto;
+}
+.buttonContainer {
+  display: flex;
+  gap: 10px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background-color: transparent; /* Changed from #f0f0f0 to transparent */
+  color: white; /* Default text color */
+}
+
+
+.active {
+  background-color: #2915F9;
+  color: white;
+}
+
+.icon {
+  font-size: 18px;
+  opacity: 0.7;
+}
+
+.content {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 100%;
+  margin-top: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.date {
+  font-size: 14px;
+  color: gray;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.section {
+  line-height: 1.6;
+  text-align: center;
+}
+    .hashtag {
+  color: blue;
+  font-weight: 500;
+  margin-right: 5px;
+  display: inline-block;
+}
+.tagItem {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 14px;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    margin: 2px;
+}
+
+.tagItem {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 14px;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    margin: 2px;
+}
+
+
+.contentNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -20px;
+  margin-left: -20px;
+  margin-right: -20px;
+  padding: 10px 15px;
+  background-color: #EAE8FE;
+  border-radius: 12px 12px 0px 0px;
+  
+  border-bottom: 1px solid #e9ecef;
+}
+
+.contentTitle {
+  margin: 0px;
+  font-size: 1.25rem;
+  color: #495057;
+}
