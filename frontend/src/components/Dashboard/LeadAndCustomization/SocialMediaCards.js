@@ -1,13 +1,14 @@
-"use client";
 import React, { useEffect, useState } from "react";
 import {
   FaLinkedin,
   FaFacebook,
   FaInstagram,
   FaYoutube,
+  FaPlus,
+  FaTimes,
 } from "react-icons/fa";
-import { FiMoreVertical } from "react-icons/fi";
-import { HiOutlinePlus, HiOutlineFilter } from "react-icons/hi";
+import { HiOutlineFilter } from "react-icons/hi";
+import styles from "/src/styles/Leads/Socialmediacard.module.css";
 
 const API_URL = "http://localhost:8000";
 
@@ -70,16 +71,6 @@ const SocialMediaCards = () => {
   const platformIcons = {
     LinkedIn: FaLinkedin,
     Facebook: FaFacebook,
-    "X Twitter": () => (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-        className="h-6 w-6"
-      >
-        <path d="M23.89 3.54L13.48 12l10.41 8.46c.2.17.2.48 0 .64l-2.07 1.67c-.2.16-.52.16-.71 0L12 14.67 2.47 22.77c-.19.16-.51.16-.71 0L-.31 22.1c-.19-.16-.19-.48 0-.64L9.88 12-.31 3.54c-.2-.17-.2-.48 0-.64l2.07-1.67c.2-.16.52-.16.71 0L12 9.33l9.53-7.1c.19-.16.51-.16.71 0l2.07 1.67c.19.16.19.48 0 .64z" />
-      </svg>
-    ),
     Instagram: FaInstagram,
     YouTube: FaYoutube,
   };
@@ -87,7 +78,6 @@ const SocialMediaCards = () => {
   const platformColors = {
     LinkedIn: "#0077B5",
     Facebook: "#1877F2",
-    "X Twitter": "#000000", // Black for "X"
     Instagram: "#C13584",
     YouTube: "#FF0000",
   };
@@ -115,119 +105,101 @@ const SocialMediaCards = () => {
   };
 
   return (
-    <div className="space-y-4">
-      <h2 className="text-xl font-semibold flex items-center gap-2">
+    <div className={styles["social-media-cards"]}>
+      <div className={styles["card-header"]}>
         <HiOutlineFilter className="h-6 w-6 text-gray-500 cursor-pointer hover:text-gray-700" />
         <span className="text-blue-600">Customization Lead Management</span>
-      </h2>
+      </div>
 
       {error && <p className="text-red-500">{error}</p>}
 
-      <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-        <div className="p-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-            {Object.keys(groupedUsers).map((platform) => {
-              const Icon = platformIcons[platform] || FaLinkedin;
-              const color = platformColors[platform] || "#0077B5";
+      <div className={styles["platforms-container"]}>
+        <div className={styles["platforms-grid"]}>
+          {Object.keys(groupedUsers).map((platform) => {
+            const Icon = platformIcons[platform] || FaLinkedin;
+            const color = platformColors[platform] || "#0077B5";
 
-              return (
-                <div key={platform} className="space-y-4">
-                  <div
-                    className="p-4 flex justify-between items-center rounded-lg"
-                    style={{ backgroundColor: color }}
-                  >
-                    <div
-                      className="flex items-center gap-2 text-white cursor-pointer hover:opacity-90"
-                      title={`Go to ${platform}`}
-                    >
-                      <Icon
-                        className="transition-transform transform hover:scale-110"
-                        style={{ fontSize: "1.5rem" }}
-                      />
-                      <span>{platform}</span>
-                    </div>
-                    <button
-                      onClick={() => handleAddUser(platform)}
-                      className="text-white rounded-full p-2 transition-transform transform hover:scale-110"
-                      style={{
-                        backgroundColor: color,
-                        boxShadow: `0px 2px 5px ${color}`,
-                      }}
-                      aria-label={`Add user for ${platform}`}
-                    >
-                      <HiOutlinePlus className="h-5 w-5" />
-                    </button>
+            return (
+              <div
+                key={platform}
+                className={styles["individual-platform"]}
+                style={{ borderColor: color, backgroundColor: color }}
+              >
+                <div className={styles["platform-header"]}>
+                  {/* Platform title and icon */}
+                  <div className="flex items-center gap-2">
+                    <Icon style={{ color: "white", fontSize: "1.5rem" }} />
+                    <span style={{ color: "white" }} className="font-semibold">
+                      {platform}
+                    </span>
                   </div>
 
-                  <div>
-                    {groupedUsers[platform].map((user, idx) => (
-                      <div
-                        key={idx}
-                        className="mb-4 cursor-pointer hover:bg-gray-100 rounded-lg relative"
-                        onClick={() => handleSelectUser(user)}
-                      >
-                        <div className="flex items-center gap-3">
-                          <img
-                            src={user.image}
-                            alt={user.name}
-                            className="h-10 w-10 rounded-full"
-                          />
-                          <div>
-                            <p className="font-medium">{user.name}</p>
-                          </div>
-                          <button
-                            className="absolute top-2 right-2 text-sm text-gray-500"
-                            aria-label="More options"
+                  {/* Plus button on the right */}
+                  <button
+                    onClick={() => handleAddUser(platform)}
+                    className={styles["add-button"]}
+                    style={{ backgroundColor: "white", color: color }}
+                  >
+                    <FaPlus className="h-5 w-5" />
+                  </button>
+                </div>
+
+                <div className={styles["platform-users"]}>
+                  {groupedUsers[platform].map((user) => (
+                    <div
+                      key={user.email}
+                      className={styles["user-card"]}
+                      onClick={() => handleSelectUser(user)}
+                    >
+                      <div className={styles["user-info"]}>
+                        <img
+                          src={user.image}
+                          alt={user.name}
+                          className="h-8 w-8 rounded-full"
+                        />
+                        <div>
+                          <p className="font-medium">{user.name}</p>
+                          <p className="text-sm text-gray-600">{user.email}</p>
+                          <p className="text-sm text-gray-600">{user.phone}</p>
+                          <p className="text-sm text-gray-600">{user.location}</p>
+                          <span
+                            className={`${styles["priority-badge"]} ${styles[user.priority.toLowerCase()]}`}
                           >
-                            <FiMoreVertical className="h-5 w-5" />
-                          </button>
-                        </div>
-                        <div className="space-y-2 text-sm text-gray-600 mt-2">
-                          <p>📧 {user.email}</p>
-                          <p>📞 {user.phone}</p>
-                          <p>📍 {user.location}</p>
-                          <p>⭐ {user.priority}</p>
+                            {user.priority}
+                          </span>
                         </div>
                       </div>
-                    ))}
-                  </div>
+                    </div>
+                  ))}
                 </div>
-              );
-            })}
-          </div>
+              </div>
+            );
+          })}
         </div>
       </div>
 
       {selectedUser && (
-        <div className="fixed inset-0 bg-gray-500 bg-opacity-50 flex justify-center items-center z-50">
-          <div className="bg-white p-6 rounded-lg w-80 max-w-full">
-            <h3 className="text-lg font-semibold mb-4">User Details</h3>
-            <div className="flex items-center gap-4">
+        <div className={styles["popup-overlay"]}>
+          <div className={styles["popup-content"]}>
+            <button className={styles["close-btn"]} onClick={closePopup}>
+              <FaTimes />
+            </button>
+            <div className={styles["user-info"]}>
               <img
                 src={selectedUser.image}
                 alt={selectedUser.name}
-                className="h-16 w-16 rounded-full"
+                className="h-12 w-12 rounded-full"
               />
-              <div>
-                <p className="font-medium">{selectedUser.name}</p>
-                <p className="text-sm text-gray-500">{selectedUser.email}</p>
-                <p className="text-sm text-gray-500">{selectedUser.phone}</p>
-              </div>
+              <h2>{selectedUser.name}</h2>
+              <p>{selectedUser.email}</p>
+              <p>{selectedUser.platform}</p>
             </div>
-            <div className="mt-4 flex justify-between">
-              <button
-                className="px-4 py-2 bg-red-600 text-white rounded-lg"
-                onClick={() => handleDeleteUser(selectedUser.email)}
-              >
-                Delete User
-              </button>
-              <button
-                className="px-4 py-2 bg-blue-600 text-white rounded-lg"
-                onClick={closePopup}
-              >
-                Close
-              </button>
-            </div>
+            <button
+              className={styles["delete-btn"]}
+              onClick={() => handleDeleteUser(selectedUser.email)}
+            >
+              Delete User
+            </button>
           </div>
         </div>
       )}

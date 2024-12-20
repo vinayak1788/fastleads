@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { PieChart, Pie, Cell, Legend } from 'recharts';
+import '../../../styles/Leads/Customization.css';
 
 export default function CustomizationLeadManagement() {
   const [leadData, setLeadData] = useState([]);
@@ -10,7 +11,6 @@ export default function CustomizationLeadManagement() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Uncomment for real fetch calls or use hardcoded data for testing
         // Fetch lead data
         const leadsResponse = await fetch('http://localhost:8000/leads');
         const leads = await leadsResponse.json();
@@ -44,14 +44,15 @@ export default function CustomizationLeadManagement() {
 
   return (
     <div className="flex-1 p-6">
-      <div className="bg-white p-6 rounded-lg shadow-sm relative">
-        {/* Title and content */}
+      {/* Parent card containing both charts */}
+      <div className="combined-charts-card bg-white p-6 rounded-lg shadow-sm relative">
         <h3 className="text-xl font-semibold mb-6">Customization Lead Management</h3>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Line Chart for Lead Data */}
-          <div className="bg-white p-4 rounded-lg shadow-sm" style={{ height: '400px' }}>
-            <ResponsiveContainer width="100%" height="100%">
+        
+        <div className="flex gap-6">
+          {/* Line Chart Card */}
+          <div className="chart-card line-chart-card">
+            <h4 className="text-lg font-semibold mb-4">Lead Data</h4>
+            <ResponsiveContainer width="100%" height={300}>
               <LineChart data={leadData}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="name" />
@@ -62,10 +63,10 @@ export default function CustomizationLeadManagement() {
             </ResponsiveContainer>
           </div>
 
-          {/* Pie Chart for Priority Data */}
-          <div className="bg-white p-4 rounded-lg shadow-sm" style={{ height: '400px' }}>
-            <h3 className="text-lg font-semibold mb-4 text-center">TOTAL PRIORITY</h3>
-            <ResponsiveContainer width="100%" height="100%">
+          {/* Pie Chart Card */}
+          <div className="chart-card pie-chart-card">
+            <h4 className="text-lg font-semibold text-center mb-4">Total Priority</h4>
+            <ResponsiveContainer width="100%" height={300}>
               <PieChart>
                 <Pie
                   data={priorityData}

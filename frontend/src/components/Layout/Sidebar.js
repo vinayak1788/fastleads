@@ -56,7 +56,7 @@ const navigationItems = [
   {
     icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/27e54dd5e89f1a15533e10ee9ca332c6cad303a62db1d77c67ce237f3406bd91?placeholderIfAbsent=true&apiKey=0bda2653b3104374a175304f95be6d12",
     label: "Leads",
-    path: "../leads",
+    path: "../Leads",
     hasDropdown: true,
     dropdownItems: [
       { label: "Leads High", path: "/social-inbox/high" },

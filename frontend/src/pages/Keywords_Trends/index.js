@@ -4,6 +4,8 @@ import { FaRegThumbsUp } from 'react-icons/fa';
 import SocialCard from '../../components/Dashboard/YourKeywords/SocialCard';
 import GenhashContainer from '../../components/Dashboard/YourKeywords/Genhash/GenhashContainer';
 
+import Navbar from "../../components/Layout/Navbar";
+import Sidebar from "../../components/Layout/Sidebar";
 
 const App = () => {
   const platforms = [

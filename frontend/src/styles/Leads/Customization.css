@@ -1,0 +1,44 @@
+/* Parent card for both charts */
+.combined-charts-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Reduced gap */
+}
+
+/* Flex container for placing the chart cards side by side */
+.combined-charts-card .flex {
+  display: flex;
+  gap: 0.8rem; /* Reduced space between the chart cards */
+}
+
+/* Individual chart card styling */
+.chart-card {
+  background-color: #f9fafb; /* Light background for the cards */
+  padding: 0.8rem 0.5rem; /* Reduced vertical padding */
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Slightly reduced box shadow */
+  flex: 1; /* Allow cards to take equal space */
+  min-height: 280px; /* Set a minimum height for the cards */
+  max-height: 330px; /* Set a max height to control the card size */
+  overflow: hidden; /* Prevent content overflow if it exceeds the max height */
+}
+
+/* Title for each chart card, aligned to the left */
+.chart-card h4 {
+  font-size: 1.125rem; /* Slightly smaller font size */
+  font-weight: 600;
+  color: #1f2937; /* Darker text color */
+  margin-bottom: 0.6rem; /* Reduced margin for title */
+  text-align: left; /* Align text to the left */
+  padding-left: 8px; /* Reduced padding for better spacing */
+}
+
+/* Specific card for the line chart */
+.line-chart-card {
+  /* Additional custom styles for the line chart card if necessary */
+}
+
+/* Specific card for the pie chart */
+.pie-chart-card {
+  /* Additional custom styles for the pie chart card if necessary */
+}

@@ -22,6 +22,21 @@
       "static/chunks/main.js",
       "static/chunks/pages/Homepage.js"
     ],
+    "/Keywords_Trends": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/Keywords_Trends.js"
+    ],
+    "/Leads": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/Leads.js"
+    ],
+    "/SocialInbox": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/SocialInbox.js"
+    ],
     "/_app": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
