@@ -17,15 +17,15 @@
       "static/chunks/main.js",
       "static/chunks/pages/index.js"
     ],
-    "/Competitors": [
+    "/Login": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/Competitors.js"
+      "static/chunks/pages/Login.js"
     ],
-    "/Keywords_Trends": [
+    "/SocialInbox": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/Keywords_Trends.js"
+      "static/chunks/pages/SocialInbox.js"
     ],
     "/_app": [
       "static/chunks/webpack.js",

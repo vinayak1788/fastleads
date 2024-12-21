@@ -34,7 +34,7 @@ export default function UserProfile() {
     };
 
     const handleLogout = () => {
-        router.push('./components/Layout/Login'); // Update path based on the Next.js pages directory
+        router.push('/Login'); // Update path based on the Next.js pages directory
     };
 
     useEffect(() => {

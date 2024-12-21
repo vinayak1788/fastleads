@@ -1,9 +1,8 @@
 {
-  "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
+  "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
-  "/Keywords_Trends": "pages/Keywords_Trends.js",
-  "/Competitors": "pages/Competitors.js",
-  "/Leads": "pages/Leads.js"
+  "/Login": "pages/Login.js",
+  "/SocialInbox": "pages/SocialInbox.js"
 }
