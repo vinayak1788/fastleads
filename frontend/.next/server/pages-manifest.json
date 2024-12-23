@@ -2,6 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
+  "/ContentScheduler": "pages/ContentScheduler.js",
   "/": "pages/index.js",
-  "/Engagement_Feed": "pages/Engagement_Feed.js"
+  "/Login": "pages/Login.js"
 }

@@ -1,7 +1,8 @@
-// General global styles
-import '../styles/globals.css';
+import '../styles/globals.css'
+// Import other global CSS files here
 
-// This is the default App component wrapper provided by Next.js
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+function MyApp({ Component, pageProps }) {
+  return <Component {...pageProps} />
 }
+
+export default MyApp

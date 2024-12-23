@@ -1,39 +1,60 @@
-.content-scheduler-card {
-  width: 405px;
-  height: 390px;
-  border-radius: 8px;
-  padding: 20px;
-  overflow: hidden;
- 
+.container {
+  width: 94%;
+  height: 94%;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #e3f2fd, #ede7f6);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 16px;
 }
 
-.content-scheduler-card .card-header {
+.header {
   display: flex;
-  justify-content: space-between;
-  background-color:rgb(240, 182, 182);
-  font-size: 1.2rem;
-  border-radius: 5px;
-  padding: 5px;
-  width: 100%; 
-}
-
-.content-scheduler-card .card-body {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding-top: 10px;
+  justify-content: space-between;
+  padding: 8px;
+  background-color: #f8bbd0;
+  border-radius: 8px;
 }
 
-.doughnut-chart {
-  width: 50%; /* Adjust width as necessary */
-  height: 100px; /* Adjust the height of the doughnut chart */
-}
-
-.content-info {
-  width: 45%; /* Adjust width as necessary */
-  padding-left: 20px;
-  font-size: 14px;
+.headerTitle {
+  display: flex;
+  align-items: center;
   font-weight: bold;
-  color: #2d2d2d;
-  text-align: left;
+}
+
+.icon {
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+.iconBtn {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.chartContainer {
+  display: flex;
+  width: 100%;
+  height: 200px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.legend {
+  margin-top: 12px;
+  padding-left: 12px;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.legendColor {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 8px;
 }

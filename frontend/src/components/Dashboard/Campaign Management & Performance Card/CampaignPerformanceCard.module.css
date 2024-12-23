@@ -1,31 +1,43 @@
 .campaign-performance-card {
-  padding: 10px;
-  margin-bottom: 2px;
-  width: 610px;
-  height: 390px;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  overflow: hidden;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-  .Campaign-header {
-    display: flex;
-    border: 2ppx solid #d03a3a;
-    justify-content: space-between;
-    background-color: rgb(167, 234, 209);
-    font-size: 1.2rem;
-    border-radius: 5px;
-    padding: 5px;
-    height: 40px;
-    width: 100%; border-radius: 5px;
+.Campaign-header {
+  background-color: #f5f5f5; ;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-.campaign-performance-card .campcard-body {
-  padding-top: 10px;
+.Campaign-header span {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
 }
 
-.campaign-performance-card .bar-chart {
+.close-button button {
+  background: #f5f5f5;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.close-button button:hover {
+  background: #e0e0e0;
+}
+
+.campcard-body {
   width: 100%;
-  height: 350px; /* Adjust the height of the chart */
+  height: 300px;
+}
+
+.bar-chart {
+  width: 100%;
+  height: 100%;
 }

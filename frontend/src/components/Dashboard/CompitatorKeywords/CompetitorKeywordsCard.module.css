@@ -1,39 +1,47 @@
-.competitor-keywords-card {
-  padding: 20px;
-  width: 610px;
-  height: 390px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+/* Container */
+.competitor-container {
+  width:100%;
+  height: 99%;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #e3f2fd, #f0f4c3);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+ 
 }
 
-.competitor-keywords-card .card-header {
+/* Header */
+.header {
   display: flex;
-  justify-content: space-between;
-  background-color: rgba(157, 204, 237, 0.615);
-  font-size: 1.2rem;
-  border-radius: 5px;
-  padding: 5px;
-  height: 40px;
-  width: 100%;
-}
-
-.competitor-keywords-card .card-body {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding-top: 10px;
+  justify-content: space-between;
+  padding: 8px;
+  background-color: #c8e6c9;
+  border-radius: 8px;
 }
 
+.header-title {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+.icon {
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+.icon-btn {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Chart Container */
 .chart-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  margin-top: 20px;
   width: 100%;
-  
+  height: 350px;
 }
 
-.bar-chart {
-  width: 95%; /* Adjust width as necessary */
-  height: 300px; /* Adjust the height of the bar chart */
+/* Bar Colors */
+.recharts-bar-rectangle {
+  border-radius: 5px;
 }
-
-/*  */

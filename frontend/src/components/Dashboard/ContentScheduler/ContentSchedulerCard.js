@@ -1,63 +1,61 @@
-import React from 'react';
-import DashboardCard from '../../DashboardCard'; // Import reusable DashboardCard component
-import './ContentSchedulerCard.module.css'; // Import CSS file for this component
-import { Doughnut } from 'react-chartjs-2'; // Import Doughnut chart from chart.js
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 
-// Register necessary Chart.js components
-ChartJS.register(ArcElement, Tooltip, Legend);
+import React from "react";
+import { PieChart, Pie, Cell, Tooltip } from "recharts";
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
+import styles from './ContentSchedulerCard.module.css';
 
-const ContentSchedulerCard = () => {
-  // Data for the content scheduler radial chart (stacked doughnut)
-  const data = {
-    //labels: ['Approved Posts', 'Published Posts', 'Pending Posts', 'Scheduled Posts'], // Labels for the doughnut sections
-    datasets: [
-      {
-        label: 'Content Posts',
-        data: [25, 18, 7, 5], // Data values for each section
-        backgroundColor: ['#4BC0C0', '#FF9F40', '#FFCD56', '#FF6384'], // Colors for each section
-        borderWidth: 0, // Remove border width for a clean look
-      },
-    ],
-  };
+const data = [
+  { name: "Approved", value: 25, color: "#4CAF50" },
+  { name: "Published posts", value: 25, color: "#1976D2" },
+  { name: "Pending", value: 25, color: "#FFEB3B" },
+  { name: "Scheduled posts", value: 25, color: "#FF9800" }
+];
 
-  // Options for the doughnut chart (stacked radial chart)
-  const options = {
-    responsive: true,
-    cutout: '60%', // Makes the center hole larger, creating a doughnut effect
-    plugins: {
-      tooltip: {
-        callbacks: {
-          label: function (tooltipItem) {
-            return `${tooltipItem.label}: ${tooltipItem.raw}`; // Display value on hover
-          },
-        },
-      },
-    },
-  };
-
+const ContentScheduler = () => {
   return (
-    <DashboardCard className="content-scheduler-card">
-           <div className="card-header">Content Scheduler
-            {/* Adding a button with a link href */}
-        <a href="/ContentScheduler" className="close-button">
-          <button>↗</button> </a>  
+    <div className={styles.container}>
+      <div className={styles.header}>
+        <div className={styles.headerTitle}>
+          <CalendarMonthIcon className={styles.icon} />
+          <span>Content Scheduler</span>
+        </div><a href="/ContentScheduler" className={styles['close-button']}>
+         <button>↗</button>
+       </a>
+      </div>
 
+      <div className={styles.chartContainer}>
+        <PieChart width={150} height={150}>
+          <Pie
+            data={data}
+            dataKey="value"
+            cx="50%"
+            cy="50%"
+            innerRadius={40}
+            outerRadius={60}
+            paddingAngle={5}
+          >
+            {data.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={entry.color} />
+            ))}
+          </Pie>
+          <Tooltip />
+        </PieChart>
       </div>
-      <div className="card-body">
-        <div className="doughnut-chart">
-          {/* Doughnut Chart for Content Scheduler */}
-          <Doughnut data={data} options={options} />
-        </div>
-        <div className="content-info">
-          <p><strong>Approved Posts:</strong> 25</p>
-          <p><strong>Published Posts:</strong> 18</p>
-          <p><strong>Pending Posts:</strong> 7</p>
-          <p><strong>Scheduled Posts:</strong> 5</p>
-        </div>
+
+      <div className={styles.legend}>
+        {data.map((item, index) => (
+          <div key={`legend-${index}`} className={styles.legendItem}>
+            <div
+              className={styles.legendColor}
+              style={{ backgroundColor: item.color }}
+            />
+            <span>{item.name}</span>
+          </div>
+        ))}
       </div>
-    </DashboardCard>
+    </div>
   );
 };
 
-export default ContentSchedulerCard;
+export default ContentScheduler;

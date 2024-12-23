@@ -1,42 +1,77 @@
-import React from 'react';
-import Link from 'next/link';
-import { Pie } from 'react-chartjs-2';
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'; // Import required elements
-import DashboardCard from '../../DashboardCard'; // Import the reusable DashboardCard component
-import './KeywordsTrendsCard.module.css'; // Import the CSS file for this component
 
-// Register required elements for Chart.js
-ChartJS.register(ArcElement, Tooltip, Legend);
+import React from "react";
+import { PieChart, Pie, Cell, Tooltip } from "recharts";
+import styles from '../../../styles/Keywords/KeywordsTrendsCard.module.css';
+import NotesIcon from "@mui/icons-material/Notes";
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 
-const KeywordsTrendsCard = () => {
-  // Data for the pie chart
-  const data = {
-    labels: ['To write content', 'Ideas and Inspiration', 'To create Outline', 'To draft content'],
-    datasets: [
-      {
-        data: [6, 45, 31, 18],
-        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0'],
-        hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0'],
-      },
-    ],
+const data = [
+  { name: "Ideas and Inspiration", value: 45, color: "#F44336" },
+  { name: "To create Outline", value: 31, color: "#FFC107" },
+  { name: "To draft content", value: 18, color: "#673AB7" },
+  { name: "To write content", value: 6, color: "#4CAF50" },
+];
+
+const InsightsChart = () => {
+  const renderCustomLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, name }) => {
+    const radius = innerRadius + (outerRadius - innerRadius) * 1.4;
+    const x = cx + radius * Math.cos(-midAngle * Math.PI / 180);
+    const y = cy + radius * Math.sin(-midAngle * Math.PI / 180);
+    
+    return (
+      <text 
+        x={x} 
+        y={y} 
+        fill="black" 
+        textAnchor="middle" 
+        dominantBaseline="middle"
+      >
+        {`${name} ${(percent * 100).toFixed(0)}%`}
+      </text>
+    );
   };
 
   return (
-    <DashboardCard className="keywords-trends-card">
-      <div className="keycard-header">
-        <span>Your Keywords, Trends, Insights</span>
-        {/* Adding a button with a link href */}
-        <Link href="/Keywords_Trends" className="close-button">
-          <button>↗</button>
-        </Link>
+    <div className={styles['insights-container']}>
+      <div className={styles.header}>
+        <div className={styles['header-title']}>
+          <NotesIcon className={styles.icon} />
+          <span>Your Keywords, Trends, Insights</span>
+        </div>
+        <OpenInNewIcon className={styles['icon-btn']} />
       </div>
 
-      {/* Pie chart without the expand functionality */}
-      <div className="card-body">
-        <Pie data={data} />
+      <div className={styles['chart-container']}>
+        <PieChart width={400} height={400}>
+          <Pie
+            data={data}
+            dataKey="value"
+            cx="50%"
+            cy="50%"
+            outerRadius={120}
+            labelLine={true}
+            label={renderCustomLabel}
+          >
+            {data.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={entry.color} />
+            ))}
+          </Pie>
+          <Tooltip />
+        </PieChart>
       </div>
-    </DashboardCard>
+
+      <div className={styles.labels}>
+        {data.map((item, index) => (
+          <div key={index} className={styles['label-item']}>
+            <span style={{ color: item.color, fontWeight: "bold" }}>
+              {item.value}%
+            </span>
+            <span>{item.name}</span>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 };
 
-export default KeywordsTrendsCard;
+export default InsightsChart;

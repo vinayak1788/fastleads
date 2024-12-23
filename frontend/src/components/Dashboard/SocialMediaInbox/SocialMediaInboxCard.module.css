@@ -1,27 +1,69 @@
-.social-media-inbox-card {
-  width: 405px;
-  height: 390px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Center-align the content */
+
+ .card {
+  background: linear-gradient(180deg, #f0f8ff 0%, #dfefff 100%);
+  border-radius: 12px;
+  padding: 20px;
+  width: 90%;
+  height: 90%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.social-media-inbox-card .card-header {
+.header {
   display: flex;
   justify-content: space-between;
-  background-color:aqua;
-  font-size: 1.2rem;
-  border-radius: 5px;
-  padding: 5px;
-  width: 100%; /* Center-align header text */
+  align-items: center;
+  margin-bottom: 16px;
 }
 
-.social-media-inbox-card .card-body {
-  padding-top: 10px;
-  width: 100%; /* Ensure the chart fits within the card */
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.expandButton {
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.content {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+.chartContainer {
+  width: 220px;
+  height: 280px;
+  margin-bottom: 16px;
+}
+
+.legend {
+  width: 100%;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.highPriority {
+  background-color: #00c49f;
+}
+
+.messages {
+  background-color: #ffdb58;
+}

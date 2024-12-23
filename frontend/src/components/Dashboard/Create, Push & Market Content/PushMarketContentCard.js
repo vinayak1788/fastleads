@@ -2,7 +2,8 @@
 
 import React from 'react';
 import DashboardCard from '../../DashboardCard'; // Import reusable DashboardCard component
-import './PushMarketContentCard.module.css'; // Import CSS file for this component
+import styles from './PushMarketContentCard.module.css';
+// Import CSS file for this component
 import { Doughnut } from 'react-chartjs-2'; // Import Doughnut chart from Chart.js
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 
@@ -36,34 +37,27 @@ const options = {
     },
   },
 };
+  const PushMarketContentCard = () => {
+    const totalVisitors = data.datasets[0].data.reduce((a, b) => a + b, 0);
 
-const PushMarketContentCard = () => {
-  // Total Visitors Calculation
-  const totalVisitors = data.datasets[0].data.reduce((a, b) => a + b, 0);
-
-  return (
-    <DashboardCard className="push-market-content-card">
-      <div className="card-header"><span> Create, Push & Market Content</span>
-       {/* Adding a button with a link href */}
-       <a href="/Contentpush" className="expend-button">
-          <button>↗</button>
-        </a>
-
-      </div>
-      <div className="card-body">
-        <div className="content-push">
-          {/* Doughnut Chart for Push Market Content */}
-          <Doughnut data={data} options={options} />
-          </div>
-        <div className="content-info">
-          <p><strong>Content Push Marketing:</strong>652 </p>
-          <p><strong>Last Check:</strong> 24 Apr</p>
-          {/* <p><strong>Total Visitors:</strong> {totalVisitors.toLocaleString()}</p> */}
-        
+    return (
+      <DashboardCard className={styles.pushMarketCard}>
+        <div className={styles['card-header']}>
+          <span>Create, Push & Market Content</span>
+          <a href="/Contentpush" className={styles['expend-button']}>
+            <button>↗</button>
+          </a>
         </div>
-      </div>
-    </DashboardCard>
-  );
-};
-
+        <div className={styles['card-body']}>
+          <div className={styles['content-push']}>
+            <Doughnut data={data} options={options} />
+          </div>
+          <div className={styles['content-info']}>
+            <p><strong>Content Push Marketing:</strong>652</p>
+            <p><strong>Last Check:</strong> 24 Apr</p>
+          </div>
+        </div>
+      </DashboardCard>
+    );
+  };
 export default PushMarketContentCard;

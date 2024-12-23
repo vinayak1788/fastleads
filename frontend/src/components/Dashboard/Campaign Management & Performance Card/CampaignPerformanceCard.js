@@ -2,7 +2,7 @@ import React from 'react';
 import DashboardCard from '../../DashboardCard';
 import { Bar } from 'react-chartjs-2'; // Import Bar chart from react-chartjs-2
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js'; // Import necessary Chart.js components
-import './CampaignPerformanceCard.module.css'; // Import CSS module for styling
+import  styles from './CampaignPerformanceCard.module.css'; // Import CSS module for styling
 import Link from 'next/link';
 // Register necessary Chart.js components
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
@@ -37,20 +37,19 @@ const CampaignPerformanceCard = () => {
   };
 
   return (
-    <DashboardCard className="campaign-performance-card">
-      <div className="Campaign-header"><span>Campaign Management & Performance</span>
-        {/* Adding a button with a link href */}
-       <Link href="/Campaign" className="close-button">
-          <button>↗</button>
-        </Link>
+    <DashboardCard className={styles['campaign-performance-card']}>
+    <div className={styles['Campaign-header']}>
+      <span>Campaign Management & Performance</span>
+      <Link href="/Campaign" className={styles['close-button']}>
+        <button>↗</button>
+      </Link>
+    </div>
+    <div className={styles['campcard-body']}>
+      <div className={styles['bar-chart']}>
+        <Bar data={data} options={options} />
       </div>
-      <div className="campcard-body">
-        <div className="bar-chart">
-          {/* Bar Chart for Campaign Performance */}
-          <Bar data={data} options={options} />
-        </div>
-      </div>
-    </DashboardCard>
+    </div>
+  </DashboardCard>
   );
 };
 
