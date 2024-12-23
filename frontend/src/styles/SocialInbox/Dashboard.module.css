@@ -6,7 +6,8 @@
   }
   
   .container {
-  padding: 20px;
+  padding: 20px; 
+  
   background-color: #F5F5F5;
   max-height: 100%;
 }

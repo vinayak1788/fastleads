@@ -1,36 +1,22 @@
 /* Sidebar.module.css */
 
-/* Sidebar container styles */
+/* Sidebar container */
 .sidebarContainer {
-  display: flex;
-  
+ display: sticky;
+ padding-top: 200px;
   flex-direction: column;
-  font-size: 14px;
-  color: #0a0202;/*text color*/
-  /* Set a large height to ensure scrollable content */
-   /* Set the width of the sidebar */
-  height: 100vh;
-  width: 200px;
-  padding-left: 30px;
-  padding-top: 20px;
+ margin-top: 8px;
+  width: 250px;
+  padding: 5px;
+  background: linear-gradient(145deg, #aac8d4c9, #8daccc); /* Gradient background */
+  color: #fff;
 
-  /* Enable vertical scrolling if content overflows */
 }
 
-/* Dashboard item styles */
-.dashboardItem {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  
-  white-space: nowrap;
-  font-weight: bold;
-  width: 100%;
-  overflow: hidden;
-}
-
-/* Navigation item styles */
+/* Navigation item */
 .navItem {
+  width: 280px;
+  margin-bottom: 15px;
   cursor: pointer;
 }
 
@@ -38,94 +24,57 @@
   display: flex;
   align-items: center;
   padding: 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1); /* Subtle background */
   transition: all 0.3s ease;
 }
 
 .navItemContent:hover {
-  background-color: #0066ff;
-  border-radius: 15px;
-  margin-top: 20px;
-  margin-right: 20px;
-}
-
-.navItemContent:hover .navItemLabel {
-  color: white;
-}
-
-.navItemContent:hover .navItemIcon {
-  filter: brightness(0) invert(1);
+  background: rgba(50, 69, 214, 0.8);
+  transform: translateX(5px); /* Horizontal slide effect */
+  color: #fff;
 }
 
 .navItemIcon {
   width: 24px;
   height: 24px;
-  margin-right: 12px;
+  margin-right: 10px;
 }
 
 .navItemLabel {
-  color: #333;
-  transition: color 0.3s ease;
+  flex-grow: 1;
 }
 
-.dropdownIcon {
-  margin-left: auto;
-  transition: filter 0.3s ease;
-}
-
-.navItemContent:hover .dropdownIcon {
-  filter: brightness(0) invert(1);
-}
-
-/* Dropdown menu container */
+/* Dropdown menu */
 .dropdownMenu {
-  position: absolute; /* Position it relative to the parent element */
-  top: 100%; /* Place it directly below the button */
-  left: 0; /* Align it with the button */
-  margin-top: 8px; /* Add some spacing from the button */
-  
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  /* Ensure it's above other content */
-  flex-direction: column;
-  padding: 8px;
-  width: 60%; /* Match the button width */
+  position: absolute;
+  top: 100%; /* Directly below parent */
+  left: 0;
+  margin-top: 5px;
+  padding: 10px;
+  background: rgba(34, 34, 51, 0.95); /* Dropdown background */
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* Individual dropdown item */
 .dropdownItem {
-  padding: 8px 12px;
-  cursor: pointer;
+  padding: 8px;
   border-radius: 4px;
-
+  transition: background 0.3s ease;
 }
 
 .dropdownItem:hover {
-  background-color: rgba(34, 174, 221, 0.1); /* Hover effect */
+  background: rgba(34, 174, 221, 0.8);
 }
 
-/* Parent navItem to handle relative positioning */
-.navItem {
-  position: relative; /* Required for dropdown to position itself below */
-}
-
-/* Responsive adjustments */
+/* Responsive design */
 @media (max-width: 768px) {
   .sidebarContainer {
-    width: 200px; /* Adjust sidebar width for smaller screens */
-    padding: 15px 15px 0;
-    height: 100vh; /* Ensure sidebar fits within screen */
+    width: 200px;
+    padding: 15px;
   }
 
-  .navItem {
-    max-width: 160px;
-  }
-
-  .navItemLabel {
-    font-size: 12px; /* Adjust font size for smaller screens */
-  }
-
-  .dashboardItem {
-    width: 100%; /* Ensure dashboard item spans full width */
+  .navItemContent {
+    padding: 10px;
   }
 }
-

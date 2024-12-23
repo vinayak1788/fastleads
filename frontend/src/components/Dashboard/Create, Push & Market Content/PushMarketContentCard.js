@@ -45,7 +45,7 @@ const PushMarketContentCard = () => {
     <DashboardCard className="push-market-content-card">
       <div className="card-header"><span> Create, Push & Market Content</span>
        {/* Adding a button with a link href */}
-       <a href="/another-page" className="expend-button">
+       <a href="/Contentpush" className="expend-button">
           <button>↗</button>
         </a>
 

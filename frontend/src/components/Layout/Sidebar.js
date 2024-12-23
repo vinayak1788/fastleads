@@ -25,12 +25,12 @@ const navigationItems = [
   {
     icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/2eec28e61825a14ba9ebc7bc764553ca5ae9cdf40a6d7635a4717ab08d4e3f44?placeholderIfAbsent=true&apiKey=0bda2653b3104374a175304f95be6d12",
     label: "Content Push",
-    path: "../content-push",
+    path: "../Contentpush",
   },
   {
     icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/9cf973f77f47c3f9b93b62779a161fd8d18ded1ae16ce28386e5734e6c41e09e?placeholderIfAbsent=true&apiKey=0bda2653b3104374a175304f95be6d12",
     label: "Ad Campaign",
-    path: "../ad-campaign",
+    path: "../Campaign",
   },
   {
     icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/7c35d24e8dbe5c1966ac377bcaf4d3a03ce067e18ef04a2524f0e969ff0fcb76?placeholderIfAbsent=true&apiKey=0bda2653b3104374a175304f95be6d12",

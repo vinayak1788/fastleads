@@ -3,6 +3,7 @@ import DashboardCard from '../../DashboardCard';
 import { Bar } from 'react-chartjs-2'; // Import Bar chart from react-chartjs-2
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js'; // Import necessary Chart.js components
 import styles from './CampaignPerformanceCard.css'; // Import CSS module for styling
+import Link from 'next/link';
 // Register necessary Chart.js components
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
@@ -39,9 +40,9 @@ const CampaignPerformanceCard = () => {
     <DashboardCard className="campaign-performance-card">
       <div className="Campaign-header"><span>Campaign Management & Performance</span>
         {/* Adding a button with a link href */}
-       <a href="/another-page" className="close-button">
+       <Link href="/Campaign" className="close-button">
           <button>↗</button>
-        </a>
+        </Link>
       </div>
       <div className="campcard-body">
         <div className="bar-chart">

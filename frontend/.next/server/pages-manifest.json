@@ -1,8 +1,10 @@
 {
-  "/_error": "pages/_error.js",
   "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js",
-  "/Login": "pages/Login.js",
-  "/SocialInbox": "pages/SocialInbox.js"
+  "/Engagement_Feed": "pages/Engagement_Feed.js",
+  "/SocialInbox": "pages/SocialInbox.js",
+  "/Leads": "pages/Leads.js",
+  "/ContentScheduler": "pages/ContentScheduler.js",
+  "/Contentpush": "pages/Contentpush.js"
 }

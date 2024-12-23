@@ -1,82 +1,4 @@
-.container {
-  width: 100%;
-  min-height: 100vh; /* Changed from 10vh to 100vh for full page height */
-  background: linear-gradient(to bottom right, #f0f8ff, #e6e6fa); /* Fixed gradient syntax */
-}
-
-.navHeader {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 100;
-  background: linear-gradient(to right, #ffffff, #f8f9fa); /* Added gradient to navbar */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.sidebarele {
-  height: calc(100vh - 60px);
-  position: fixed;
-  left: 0;
-  width: 15%;
-  transform: translateX(0);
-  transition: transform 0.3s ease;
-  background: linear-gradient(to bottom, #ffffff, #f8f9fa); /* Added gradient to sidebar */
-  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
-
-
-
-.main-layout {
-  display: flex;
-  padding-top: 60px; /* Adjust for fixed navbar height */
-  position: relative;
-  width: 100vw;
-}
-
-
-
-.sidebarele.open {
-  transform: translateX(0); /* Sidebar visible when open */
-}
-
-.sidebarele.closed {
-  transform: translateX(-100%); /* Sidebar hidden */
-}
-
-.dashboardgrid {
-  flex:  auto;
-  /* margin-left: 80px; Default margin when sidebar is closed */
-  padding: 2px;
-  transition: margin-left 0.3s ease;
-  width: 70%;
-}
-
-.dashboardgrid.sidebar-open {
-  margin-left: 250px; /* Adjust when sidebar is open */
-}
-
-@media (max-width: 768px) {
-  .sidebarele {
-    transform: translateX(-100%); /* Hidden by default on smaller screens */
-  }
-
-  .sidebarele.open {
-    transform: translateX(0); /* Visible when open */
-  }
-
-  .dashboardgrid {
-    margin-left: 2px;
-    width: 100%; /* Use full width */
-  }
-
-  .dashboardgrid.sidebar-open {
-    margin-left: 0px; /* No margin for smaller screens */
-  }
-}
-                                                                                                  /* userprofile styles */
-
- /* Global Reset */
+/* Global Reset */
 body, html {
   margin: 0;
   padding: 0;
@@ -86,53 +8,48 @@ body, html {
   height: 100%;
 }
 
-/* Light Theme */
-body.light-theme {
-  --background-color: #f0f8ff; /* Alice Blue */
-  --text-color: #000000; /* Black */
-  --navbar-color: #ffffff; /* White */
-  --sidebar-color: #f8f9fa; /* Light Grey */
-  --box-shadow-color: rgba(0, 0, 0, 0.1);
-  --gradient-start: #ffffff;
-  --gradient-end: #e6e6fa; /* Lavender */
+/* Theme Variables */
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
 }
 
-/* Dark Theme */
+/* Theme Classes */
+body.light-theme {
+  --background-color: #f0f8ff;
+  --text-color: #000000;
+  --navbar-color: #ffffff;
+  --sidebar-color: #f8f9fa;
+  --box-shadow-color: rgba(0, 0, 0, 0.1);
+  --gradient-start: #ffffff;
+  --gradient-end: #e6e6fa;
+}
+
 body.blue {
-  /* --background-color: #1e1e2f; Dark Blue-Grey */
-  --text-color: #f8f8f2; /* Light Grey */
-  --navbar-color: #2c2c3b; /* Darker Grey */
-  --sidebar-color: #24242e; /* Almost Black */
+  --text-color: #f8f8f2;
+  --navbar-color: #2c2c3b;
+  --sidebar-color: #24242e;
   --box-shadow-color: rgba(0, 0, 0, 0.5);
   --gradient-start: #2e2e38;
   --gradient-end: #1e1e2f;
   background-color: #240046;
   --background-color: radial-gradient(circle at 30% 30%, #8a00ff, transparent 60%),
-  radial-gradient(circle at 70% 70%, #ff007a, transparent 50%),
-  radial-gradient(circle at 50% 50%, #4b00ff, transparent 70%);
+    radial-gradient(circle at 70% 70%, #ff007a, transparent 50%),
+    radial-gradient(circle at 50% 50%, #4b00ff, transparent 70%);
 }
 
-/* Custom Theme */
 body.light {
   --background-color: linear-gradient(to bottom right, #d0e6f9, #e6e6fa);
-  --text-color: #000000; /* Brown */
-  --navbar-color: #b5ffe1; /* Moccasin */
+  --text-color: #000000;
+  --navbar-color: #b5ffe1;
   --sidebar-color: #b5f0ff;
   --box-shadow-color: rgba(93, 64, 55, 0.5);
   --gradient-start: #adc1ff;
   --gradient-end: #f4d5ff;
 }
 
-DndProvider.drak {
-  --background-color: #1e1e2f; /* Dark Blue-Grey */
-  --text-color: #f8f8f2; /* Light Grey */
-  --navbar-color: #2c2c3b; /* Darker Grey */
-  --sidebar-color: #24242e; /* Almost Black */
-  --box-shadow-color: rgba(0, 0, 0, 0.5);
-  --gradient-start: #2e2e38;
-  --gradient-end: #1e1e2f;
-}
-/* Apply Variables */
+/* Layout Components */
 .container {
   width: 100%;
   min-height: 100vh;
@@ -140,65 +57,77 @@ DndProvider.drak {
   color: var(--text-color);
 }
 
-/* Navbar */
 .navHeader {
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 100;
-  background-color: linear-gradient(to right, #F5F3FC, #FDFBED);
+  background: linear-gradient(to right, #F5F3FC, #FDFBED);
   box-shadow: 0 2px 4px var(--box-shadow-color);
 }
 
-/* Sidebar */
 .sidebarele {
   height: calc(100vh - 60px);
+  display: sticky !important;
   position: fixed;
   left: 0;
-  width: 250px;
+  padding-top: 200px;
+  width: 30%;
+  height: 100%;
   transform: translateX(0);
   transition: transform 0.3s ease;
-  background: var(--sidebar-color);
-  box-shadow: 2px 0 4px var(--box-shadow-color);
+  overflow: hidden;
 }
 
+.main-layout {
+  display: flex;
+  padding-top: 60px;
+  position: relative;
+  width: 100vw;
+}
+
+/* Sidebar States */
 .sidebarele.open {
-  transform: translateX(0); /* Sidebar visible when open */
+  transform: translateX(0);
 }
 
 .sidebarele.closed {
-  transform: translateX(-100%); /* Sidebar hidden */
+  transform: translateX(-100%);
 }
 
-/* Dashboard Grid */
+/* Dashboard Layout */
+.dashboardgrid {
+  flex: auto;
+  padding: 2px;
+  transition: margin-left 0.3s ease;
+  width: 70%;
+}
 
 .dashboardgrid.sidebar-open {
-  margin-left: 250px; /* Adjust when sidebar is open */
+  margin-left: 250px;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .sidebarele {
-    transform: translateX(-100%); /* Hidden by default on smaller screens */
+    transform: translateX(-100%);
   }
 
   .sidebarele.open {
-    transform: translateX(0); /* Visible when open */
+    transform: translateX(0);
   }
 
   .dashboardgrid {
     margin-left: 2px;
-    width: 100%; /* Use full width */
+    width: 100%;
   }
 
   .dashboardgrid.sidebar-open {
-    margin-left: 0px; /* No margin for smaller screens */
+    margin-left: 0px;
   }
 }
 
-/* and add to' widget'  function also    what can i change   */
-
-/* LOGIN.MODULE.CSS */
+/* Login Styles */
 .loginContainer {
   display: flex;
   flex-direction: column;
@@ -207,125 +136,10 @@ DndProvider.drak {
   height: 100vh;
   background: linear-gradient(to bottom right, #e0f2f7, #e0f7fa);
   padding: 20px;
-  font-family: 'Arial', sans-serif; /* Added fallback font */
+  font-family: 'Arial', sans-serif;
 }
 
-.loginHeading {
-  color: #3f51b5;
-  margin-bottom: 30px; /* Increased margin for better spacing */
-  font-size: 2em; /* Larger heading */
-  text-align: center; /* Center alignment for better readability */
-}
-
-.formGroup {
-  margin-bottom: 20px;
-  width: 90%; /* Adjusted for responsiveness */
-  max-width: 400px; /* Ensures a maximum width */
-}
-
-.inputField {
+/* Engagement Card */
+.EngagementFeed_card {
   width: 100%;
-  padding: 15px; /* Increased padding */
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
-  font-size: 1.1em; /* Slightly larger font */
-}
-
-.showPassword {
-  cursor: pointer;
-  float: right;
-  margin-top: -35px; /* Adjusted for padding and alignment */
-  margin-right: 10px;
-  font-size: 1.2em; /* Improved visibility for the icon */
-}
-
-.checkboxGroup {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-  font-size: 1em;
-}
-
-.forgotPassword {
-  color: #3f51b5;
-  text-decoration: none;
-  margin-bottom: 10px;
-  display: block;
-  text-align: right;
-  font-size: 1em;
-  transition: color 0.3s ease; /* Smooth hover effect */
-}
-
-.forgotPassword:hover {
-  color: #1a237e; /* Slightly darker blue for hover */
-}
-
-.loginButton {
-  background-color: #3f51b5;
-  color: white;
-  padding: 15px 20px; /* Increased padding */
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 100%;
-  font-size: 1.2em; /* Larger font for the button */
-  transition: background-color 0.3s ease; /* Smooth hover effect */
-}
-
-.loginButton:hover {
-  background-color: #1a237e; /* Darker blue on hover */
-}
-
-.createAccount {
-  margin-top: 20px;
-  text-align: center;
-  color: #666;
-  font-size: 1em;
-}
-
-.createAccount a {
-  color: #3f51b5;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-.createAccount a:hover {
-  color: #1a237e; /* Darker blue for hover */
-}
-/* Global styles (e.g., in styles/globals.css) */
-/* Navbar.module.css */
-:global(:root.theme-light) {
-  --bg-color: #ffffff;
-  --text-color: #000000;
-}
-
-:global(:root.theme-dark) {
-  --bg-color: #000000;
-  --text-color: #ffffff;
-}
-
-:global(:root.theme-blue) {
-  --bg-color: #1e3a8a;
-  --text-color: #ffffff;
-}
-
-/* Ensure your component styles use these variables */
-.container {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  transition: background-color 0.3s, color 0.3s;
-}
-
-/* leads */
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-start-rgb));
 }

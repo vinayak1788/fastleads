@@ -37,10 +37,7 @@ const Home = () => {
           
                 {/* Content Section */}
                 <div className="flex space-x-6 mt-6">
-                  {/* Customization Lead Management */}
-                  <div className="flex-1">
-                    <KeywordsTrendsCard />
-                  </div>
+                  
                 </div>
               </div>
       </div>

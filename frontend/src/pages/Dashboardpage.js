@@ -13,22 +13,36 @@ import ContentScheduler from './ContentScheduler';
 import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
 import "../styles/Dashboard.css";
+// import Navbar from "../../components/Layout/Navbar";
+// import Sidebar from "../../components/Layout/Sidebar";
+// import "../../styles/globals.css";
+import Navbar from "../components/Layout/Navbar";
+import Sidebar from "../components/Layout/Sidebar";
+import "../styles/globals.css";
 
-const ResponsiveGridLayout = WidthProvider(Responsive);
 
-const DashboardPage = () => {
-  // Step 1: State to track visibility of widgets
-  const [visibleCards, setVisibleCards] = useState({
-    keywords: true,
-    competitor: true,
-    pushMarket: true,
-    campaign: true,
-    engagement: true,
-    social: true,
-    scheduler: true,
-    lead: true
-  });
 
+  const ResponsiveGridLayout = WidthProvider(Responsive);
+
+  const DashboardPage = () => {
+    // Move useState inside the component
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    const [visibleCards, setVisibleCards] = useState({
+      keywords: true,
+      competitor: true,
+      pushMarket: true,
+      campaign: true,
+      engagement: true,
+      social: true,
+      scheduler: true,
+      lead: true
+    });
+
+    const handleSidebarToggle = () => {
+      setIsSidebarOpen(!isSidebarOpen);
+    };
+
+    // Rest of your component code...
   // Step 2: Toggle function to show/hide widgets
   const toggleCard = (cardId) => {
     setVisibleCards(prev => ({
@@ -50,7 +64,21 @@ const DashboardPage = () => {
   ];
 
   return (
+    <div className="container">
+       {/* Navbar */}
+       <div className="navHeader">
+        <Navbar toggleSidebar={handleSidebarToggle} />
+      </div>
+
+      {/* Layout with Sidebar and CampaignPerformanceCard */}
+      <div className="main-layout">
+        <Sidebar
+          className="sidebarele"
+          isOpen={isSidebarOpen}
+          toggleSidebar={handleSidebarToggle}
+        />
     <div className="dashboard-container">
+      
       <div className="dash-header">
         {/* Step 4: Pass visibility state and toggle function to the DashboardHeader */}
         <DashboardHeader 
@@ -109,6 +137,8 @@ const DashboardPage = () => {
           </div>
         )}
       </ResponsiveGridLayout>
+    </div>
+    </div>
     </div>
   );
 };
