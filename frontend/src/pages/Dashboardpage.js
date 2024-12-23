@@ -66,17 +66,17 @@ import "../styles/globals.css";
   return (
     <div className="container">
        {/* Navbar */}
-       <div className="navHeader">
+       {/* <div className="navHeader">
         <Navbar toggleSidebar={handleSidebarToggle} />
-      </div>
+      </div> */}
 
       {/* Layout with Sidebar and CampaignPerformanceCard */}
-      <div className="main-layout">
-        <Sidebar
+      {/* <div className="main-layout"> */}
+        {/* <Sidebar
           className="sidebarele"
           isOpen={isSidebarOpen}
           toggleSidebar={handleSidebarToggle}
-        />
+        /> */}
     <div className="dashboard-container">
       
       <div className="dash-header">
@@ -139,7 +139,7 @@ import "../styles/globals.css";
       </ResponsiveGridLayout>
     </div>
     </div>
-    </div>
+   
   );
 };
 

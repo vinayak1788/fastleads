@@ -12,30 +12,10 @@
   ],
   "rootMainFiles": [],
   "pages": {
-    "/ContentScheduler": [
+    "/": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/ContentScheduler.js"
-    ],
-    "/Contentpush": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/Contentpush.js"
-    ],
-    "/Engagement_Feed": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/Engagement_Feed.js"
-    ],
-    "/Leads": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/Leads.js"
-    ],
-    "/SocialInbox": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/SocialInbox.js"
+      "static/chunks/pages/index.js"
     ],
     "/_app": [
       "static/chunks/webpack.js",

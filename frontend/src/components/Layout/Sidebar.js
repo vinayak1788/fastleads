@@ -10,7 +10,7 @@ const navigationItems = [
   {
     icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/3ca21d5e0e5ef5f374fe514aab83051aeb0e8dc15622034477330b8b342dfacd?placeholderIfAbsent=true&apiKey=0bda2653b3104374a175304f95be6d12",
     label: "Dashboard",
-    path: "/Dashboardpage",
+    path: "/",
   },
   {
     icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/4dfbe2131f6df32ca2e2242adf05a6675e247679ec91a645e2e7a4f3b747ea9b?placeholderIfAbsent=true&apiKey=0bda2653b3104374a175304f95be6d12",

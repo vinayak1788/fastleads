@@ -142,7 +142,7 @@
 }
 
 .gradient {
-  background: linear-gradient(to right, #d3cce3, #e9e4f0);
+  background: linear-gradient(90deg, #edecf0 0%, #BFD0F4 35%, #FDFBED 100%);
   color: #2C3E50;
   font-family: 'Arial', sans-serif;
 }
