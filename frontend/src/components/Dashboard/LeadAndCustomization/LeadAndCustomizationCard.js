@@ -1,7 +1,7 @@
 import React from 'react';
 import DashboardCard from '../../DashboardCard';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import './LeadAndCustomizationCard.css';
+import './LeadAndCustomizationCard.module.css';
 import Link from 'next/link';
 
 const LeadAndCustomizationCard = () => {

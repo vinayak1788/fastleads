@@ -2,7 +2,7 @@
 
 import React from 'react';
 import DashboardCard from '../../DashboardCard'; // Import reusable DashboardCard component
-import './PushMarketContentCard.css'; // Import CSS file for this component
+import './PushMarketContentCard.module.css'; // Import CSS file for this component
 import { Doughnut } from 'react-chartjs-2'; // Import Doughnut chart from Chart.js
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 

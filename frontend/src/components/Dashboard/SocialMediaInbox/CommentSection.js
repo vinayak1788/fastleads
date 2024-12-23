@@ -3,7 +3,7 @@
   import { Box, Avatar, Typography } from '@mui/material';
   import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
   import { FaComments, FaSearch, FaLinkedin, FaFacebook, FaReply, FaShare, FaFlag } from "react-icons/fa";
-  import "../../../styles/SocialInbox/CommentSection.css";
+  import "../../../styles/SocialInbox/CommentSection.module.css";
 
   const CommentSection = () => {
     const [comments, setComments] = useState([

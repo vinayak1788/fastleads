@@ -3,9 +3,9 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Layout/Navbar';
 import Sidebar from '../components/Layout/Sidebar';
-import '../styles/globals.css';
+
 import Dashboardpage from './Dashboardpage';
-import KeywordsTrendsCard from '../components/Dashboard/YourKeywords/KeywordsTrendsCard';
+
 
 const Home = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);

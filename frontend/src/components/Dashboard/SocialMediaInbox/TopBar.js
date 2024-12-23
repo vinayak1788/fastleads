@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaInbox } from 'react-icons/fa';
-import '../../../styles/SocialInbox/TopBar.css';
+import '../../../styles/SocialInbox/TopBar.module.css';
 
 const TopBar = () => {
   return (

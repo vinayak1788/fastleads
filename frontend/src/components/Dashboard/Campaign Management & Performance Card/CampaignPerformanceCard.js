@@ -2,7 +2,7 @@ import React from 'react';
 import DashboardCard from '../../DashboardCard';
 import { Bar } from 'react-chartjs-2'; // Import Bar chart from react-chartjs-2
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js'; // Import necessary Chart.js components
-import styles from './CampaignPerformanceCard.css'; // Import CSS module for styling
+import './CampaignPerformanceCard.module.css'; // Import CSS module for styling
 import Link from 'next/link';
 // Register necessary Chart.js components
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);

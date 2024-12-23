@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { PieChart, Pie, Cell, Legend } from 'recharts';
-import '../../../styles/Leads/Customization.css';
+// import '../../../styles/Leads/Customization.module.css';
+import  "../../../styles/Leads/Customization.module.css";
 
 export default function CustomizationLeadManagement() {
   const [leadData, setLeadData] = useState([]);

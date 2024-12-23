@@ -1,6 +1,25 @@
 import React from 'react';
 import Image from 'next/image';
-import './DashboardHeader.css';
+import styles from "./DashboardHeader.module.css";
+
+const NavigationButton = ({ icon, label }) => {
+  return (
+    <button className={styles.Headerbutton}>
+      <div className={styles.buttonContent}>
+        {icon && (
+          <Image
+            src={icon}
+            alt=""
+            width={20}
+            height={20}
+            className={styles.icon}
+          />
+        )}
+        <span className={styles.label}>{label}</span>
+      </div>
+    </button>
+  );
+};
 
 const DashboardHeader = ({ visibleCards, onToggleCard }) => {
   const widgets = [
@@ -34,7 +53,6 @@ const DashboardHeader = ({ visibleCards, onToggleCard }) => {
       icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/6eb0e158bca254f394363e9838c588e176ffeeeef56f1c599fb32fae0abf845f",
       label: "Rating",
     },
-  
   ];
 
   const navigationRight = [
@@ -52,29 +70,10 @@ const DashboardHeader = ({ visibleCards, onToggleCard }) => {
     },
   ];
 
-  const NavigationButton = ({ icon, label }) => {
-    return (
-      <button className="Headerbutton">
-        <div className="buttonContent">
-          {icon && (
-            <Image
-              src={icon}
-              alt=""
-              width={20}
-              height={20}
-              className="icon"
-            />
-          )}
-          <span className="label">{label}</span>
-        </div>
-      </button>
-    );
-  };
-
   return (
-    <div className="topheader-container">
-      <div className="topRow">
-        <div className="navigationTop">
+    <div className={styles['topheader-container']}>
+      <div className={styles.topRow}>
+        <div className={styles.navigationTop}>
           {navigationTop.map((item, index) => (
             <NavigationButton
               key={index}
@@ -85,8 +84,8 @@ const DashboardHeader = ({ visibleCards, onToggleCard }) => {
         </div>
       </div>
 
-      <div className="mainRow">
-        <div className="leftSection">
+      <div className={styles.mainRow}>
+        <div className={styles.leftSection}>
           {navigationLeft.map((item, index) => (
             <NavigationButton
               key={index}
@@ -96,7 +95,7 @@ const DashboardHeader = ({ visibleCards, onToggleCard }) => {
           ))}
         </div>
 
-        <div className="rightSection">
+        <div className={styles.rightSection}>
           {navigationRight.map((item, index) => (
             <NavigationButton
               key={index}
@@ -104,11 +103,11 @@ const DashboardHeader = ({ visibleCards, onToggleCard }) => {
               label={item.label}
             />
           ))}
-          <div className="widgets-dropdown">
-            <button className="widgets-button">Widgets</button>
-            <div className="widgets-content">
+          <div className={styles['widgets-dropdown']}>
+            <button className={styles['widgets-button']}>Widgets</button>
+            <div className={styles['widgets-content']}>
               {widgets.map(widget => (
-                <label key={widget.id} className="widget-item">
+                <label key={widget.id} className={styles['widget-item']}>
                   <input
                     type="checkbox"
                     checked={visibleCards[widget.id]}
@@ -121,93 +120,6 @@ const DashboardHeader = ({ visibleCards, onToggleCard }) => {
           </div>
         </div>
       </div>
-      <style jsx>{`
-       .topheader-container {
-          
-         
-          width: 100%;
-          height: 100%;
-          padding: 2px;
-          
-        
-          flex-direction: column;
-          
-        }
-
-        .topRow {
-          display: flex;
-          justify-content: space-between;
-        padding: 5px;
-         
-          border-radius: 10px;
-          
-          border: 1px solid black;
-        }
-
-        .navigationTop {
-          display: flex;
-          
-          margin-bottom:0px;
-          justify-content: space-between;
-          width: 100%;
-        }
-
-        .mainRow {
-          margin-top:0px;
-          display: flex;
-          border: 1px solid black;
-          padding: 5px;
-          border-radius: 10px;
-          justify-content: space-between;
-          margin-top: 16px;
-
-        }
-
-        .leftSection,
-        .rightSection {
-          display: flex;
-         
-         justify-content: space-between;
-          gap: 12px;
-        }
-
-        .button {
-          border-radius: 20px;
-          
-          box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
-          display: flex;
-          min-height: 36px;
-          align-items: center;
-          
-          
-          white-space: nowrap;
-          cursor: pointer;
-        }
-
-        .buttonContent {
-          display: flex;
-          align-items: center;
-          gap: 4px;
-          justify-content: space-between;
-          
-         
-        }
-
-        .icon {
-        
-          aspect-ratio: 1;
-          object-fit: contain;
-          object-position: center;
-          width: 20px;
-        }
-
-        .label {
-        
-         
-          text-transform: capitalize;
-          font: 500 14px Poppins, sans-serif;
-        }
-      `}</style>
     </div>
   );
 };

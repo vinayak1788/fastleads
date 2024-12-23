@@ -1,6 +1,6 @@
 import React from 'react';
 import DashboardCard from '../../DashboardCard'; // Import reusable DashboardCard component
-import './ContentSchedulerCard.css'; // Import CSS file for this component
+import './ContentSchedulerCard.module.css'; // Import CSS file for this component
 import { Doughnut } from 'react-chartjs-2'; // Import Doughnut chart from chart.js
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 

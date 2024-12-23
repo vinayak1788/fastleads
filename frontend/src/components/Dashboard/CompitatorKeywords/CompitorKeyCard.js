@@ -1,6 +1,6 @@
 import React from 'react';
 import DashboardCard from '../../DashboardCard'; // Import reusable DashboardCard component
-import './CompetitorKeywordsCard.css'; // Import CSS file for this component
+import './CompetitorKeywordsCard.module.css'; // Import CSS file for this component
 import { Bar } from 'react-chartjs-2'; // Import Bar chart from react-chartjs-2
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 

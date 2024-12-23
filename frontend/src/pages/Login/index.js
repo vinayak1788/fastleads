@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
-import styles from "../../styles/Login.module.css";
+import styles from "../Login/Login.module.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");

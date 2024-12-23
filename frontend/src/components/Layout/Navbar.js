@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import styles from '../../styles/Navbar.module.css'; // Adjust based on the actual location of Navbar.js
+import styles from '../../styles/Navbar/Navbar.module.css'; // Adjust based on the actual location of Navbar.js
 
 import Profile from './Profile';
 

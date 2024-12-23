@@ -3,7 +3,7 @@ import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaYoutube } from 'react
 import TopBar from './TopBar';
 import CommentSection from "./CommentSection";
 import UrgentAlerts from "./UrgentAlerts";
-import '../../../styles/SocialInbox/CardBoard.css';
+import '../../../styles/SocialInbox/CardBoard.module.css';
 
 const CardBoard = () => {
   const platforms = [

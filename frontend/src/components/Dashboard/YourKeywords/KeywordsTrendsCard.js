@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Pie } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'; // Import required elements
 import DashboardCard from '../../DashboardCard'; // Import the reusable DashboardCard component
-import './KeywordsTrendsCard.css'; // Import the CSS file for this component
+import './KeywordsTrendsCard.module.css'; // Import the CSS file for this component
 
 // Register required elements for Chart.js
 ChartJS.register(ArcElement, Tooltip, Legend);

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaBell, FaUser, FaRobot, FaFlag, FaPaperPlane } from "react-icons/fa";
-import "../../../styles/SocialInbox/UrgentAlerts.css";
+import "../../../styles/SocialInbox/UrgentAlerts.module.css";
 
 const messages = [
   {

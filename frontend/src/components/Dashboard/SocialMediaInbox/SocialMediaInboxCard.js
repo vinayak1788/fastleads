@@ -2,7 +2,7 @@ import React from 'react';
 import { Pie } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'; // Import required elements
 import DashboardCard from '../../DashboardCard'; // Import the reusable DashboardCard component
-import './SocialMediaInboxCard.css'; // Import CSS for the card
+import './SocialMediaInboxCard.module.css'; // Import CSS for the card
 
 // Register required elements for Chart.js
 ChartJS.register(ArcElement, Tooltip, Legend);

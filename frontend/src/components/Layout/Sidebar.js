@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import styles from "../../styles/Sidebar.module.css"; // Adjust this path as per your structure
+import styles from "../../styles/Sidebar/Sidebar.module.css"; // Adjust this path as per your structure
 
 
 // Navigation items configuration

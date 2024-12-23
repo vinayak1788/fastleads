@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import ReactDOM from "react-dom";
-import "../../styles/Contentpush/content.css";
+import "../../styles/Contentpush/content.module.css";
 import Link from "next/link";
 import { Chart, registerables } from "chart.js";
 import Navbar from "../../components/Layout/Navbar";

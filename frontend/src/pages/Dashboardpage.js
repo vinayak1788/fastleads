@@ -9,15 +9,10 @@ import SocialMediaInboxCard from '../components/Dashboard/SocialMediaInbox/Socia
 import ContentSchedulerCard from '../components/Dashboard/ContentScheduler/ContentSchedulerCard';
 import LeadOverviewCard from '../components/Dashboard/LeadAndCustomization/LeadAndCustomizationCard';
 import DashboardHeader from '../components/Dashboard/DashboardHeader/DashboardHeader';
-import ContentScheduler from './ContentScheduler';
 import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
-import "../styles/Dashboard.css";
-// import Navbar from "../../components/Layout/Navbar";
-// import Sidebar from "../../components/Layout/Sidebar";
-// import "../../styles/globals.css";
-import Navbar from "../components/Layout/Navbar";
-import Sidebar from "../components/Layout/Sidebar";
+import "../styles/Dashboard/Dashboardpage.module.css";
+
 import "../styles/globals.css";
 
 
@@ -50,33 +45,19 @@ import "../styles/globals.css";
       [cardId]: !prev[cardId]
     }));
   };
-
-  // Step 3: Dynamically create layout based on visible widgets
-  const layout = [
-    ...(visibleCards.keywords ? [{ i: 'keywords', x: 0, y: 0, w: 6, h: 4 }] : []),
-    ...(visibleCards.competitor ? [{ i: 'competitor', x: 6, y: 0, w: 6, h: 4 }] : []),
-    ...(visibleCards.pushMarket ? [{ i: 'pushMarket', x: 0, y: 4, w: 6, h: 4 }] : []),
-    ...(visibleCards.campaign ? [{ i: 'campaign', x: 6, y: 4, w: 6, h: 4 }] : []),
-    ...(visibleCards.engagement ? [{ i: 'engagement', x: 0, y: 8, w: 4, h: 4 }] : []),
-    ...(visibleCards.social ? [{ i: 'social', x: 4, y: 8, w: 4, h: 4 }] : []),
-    ...(visibleCards.scheduler ? [{ i: 'ContentScheduler', x: 8, y: 8, w: 4, h: 4 }] : []),
-    ...(visibleCards.lead ? [{ i: 'lead', x: 0, y: 12, w: 12, h: 4 }] : [])
-  ];
-
+    // Step 3: Dynamically create layout based on visible widgets
+    const layout = [
+      ...(visibleCards.keywords ? [{ i: 'keywords', x: 0, y: 0, w: 4, h: 3 }] : []),
+      ...(visibleCards.competitor ? [{ i: 'competitor', x: 4, y: 0, w: 4, h: 3 }] : []),
+      ...(visibleCards.pushMarket ? [{ i: 'pushMarket', x: 8, y: 0, w: 4, h: 3 }] : []),
+      ...(visibleCards.campaign ? [{ i: 'campaign', x: 0, y: 3, w: 4, h: 3 }] : []),
+      ...(visibleCards.engagement ? [{ i: 'engagement', x: 4, y: 3, w: 4, h: 3 }] : []),
+      ...(visibleCards.social ? [{ i: 'social', x: 8, y: 3, w: 4, h: 3 }] : []),
+      ...(visibleCards.scheduler ? [{ i: 'ContentScheduler', x: 0, y: 6, w: 4, h: 3 }] : []),
+      ...(visibleCards.lead ? [{ i: 'lead', x: 4, y: 6, w: 8, h: 3 }] : [])
+    ];
   return (
-    <div className="container">
-       {/* Navbar */}
-       {/* <div className="navHeader">
-        <Navbar toggleSidebar={handleSidebarToggle} />
-      </div> */}
-
-      {/* Layout with Sidebar and CampaignPerformanceCard */}
-      {/* <div className="main-layout"> */}
-        {/* <Sidebar
-          className="sidebarele"
-          isOpen={isSidebarOpen}
-          toggleSidebar={handleSidebarToggle}
-        /> */}
+    
     <div className="dashboard-container">
       
       <div className="dash-header">
@@ -91,9 +72,11 @@ import "../styles/globals.css";
         layouts={{ lg: layout }}
         breakpoints={{ lg: 1200, md: 996, sm: 768, xs: 480, xxs: 0 }}
         cols={{ lg: 12, md: 12, sm: 12, xs: 1, xxs: 1 }}
-        rowHeight={100}
+        rowHeight={80}
         isDraggable={true}
         isResizable={true}
+        margin={[10, 10]}
+        containerPadding={[10, 10]}
       >
         {/* Step 5: Conditionally render the widgets based on visibility */}
         {visibleCards.keywords && (
@@ -138,7 +121,7 @@ import "../styles/globals.css";
         )}
       </ResponsiveGridLayout>
     </div>
-    </div>
+   
    
   );
 };

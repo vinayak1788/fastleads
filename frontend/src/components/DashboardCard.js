@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/DashboardCard.module.css'; // Import the styles for the card
+import '../styles/Dashboard/DashboardCard.module.css'; // Import the styles for the card
 
 const DashboardCard = ({ children, className = '', style = {} }) => {
   return (

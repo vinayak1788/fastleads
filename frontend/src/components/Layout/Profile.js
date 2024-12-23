@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import styles from '../../styles/UserProfile.module.css';
+import styles from '../../styles/Userprofile/Userprofile.module.css';
 import { FaUser, FaSignOutAlt, FaPalette } from 'react-icons/fa';
 import { useRouter } from 'next/navigation';
 import { createPortal } from 'react-dom';
@@ -75,16 +75,16 @@ export default function UserProfile() {
                             </a>
                             <div className={styles.themeSelector}>
                                 <button
+                                    onClick={() => changeTheme('gradient')}
+                                    className={`${styles.themeButton} ${styles.gradientButton} ${activeTheme === 'gradient' ? styles.activeTheme : ''}`}
+                                ></button>
+                                 <button
                                     onClick={() => changeTheme('light')}
                                     className={`${styles.themeButton} ${styles.lightButton} ${activeTheme === 'light' ? styles.activeTheme : ''}`}
                                 ></button>
                                 <button
                                     onClick={() => changeTheme('dark')}
                                     className={`${styles.themeButton} ${styles.darkButton} ${activeTheme === 'dark' ? styles.activeTheme : ''}`}
-                                ></button>
-                                <button
-                                    onClick={() => changeTheme('gradient')}
-                                    className={`${styles.themeButton} ${styles.gradientButton} ${activeTheme === 'gradient' ? styles.activeTheme : ''}`}
                                 ></button>
                             </div>
                         </li>

@@ -2,7 +2,7 @@ import React from 'react';
 import DashboardCard from '../../DashboardCard'; // Reusable card component
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css'; // Import styles for the progress bar
-import './EngagementFeedCard.css'; // Custom CSS for this component
+import './EngagementFeedCard.module.css'; // Custom CSS for this component
 
 const EngagementFeedCard = () => {
   const answeredPercentage = 22; // Percentage of answered comments
