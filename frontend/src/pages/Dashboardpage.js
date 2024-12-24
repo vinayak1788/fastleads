@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from 'react';
 import { Responsive, WidthProvider } from 'react-grid-layout';
 import KeywordsTrendsCard from '../components/Dashboard/YourKeywords/KeywordsTrendsCard';
@@ -11,7 +12,7 @@ import LeadOverviewCard from '../components/Dashboard/LeadAndCustomization/LeadA
 import DashboardHeader from '../components/Dashboard/DashboardHeader/DashboardHeader';
 import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
-import styles from "../styles/Dashboard/DashboardPage.module.css";
+import styles from "../styles/Dashboard/Dashboardpage.module.css";
 
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
