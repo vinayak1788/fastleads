@@ -1,5 +1,5 @@
-/* //Font styles */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 /* Global Reset */
 body, html {
   margin: 0;
@@ -52,11 +52,12 @@ body.light {
 }
 
 /* Layout Components */
-.container {
+.indexcontainer {
   width: 100%;
   min-height: 100vh;
   background: linear-gradient(to bottom right, var(--gradient-start), var(--gradient-end));
   color: var(--text-color);
+  border: 5px solid black;
 }
 
 .navHeader {
@@ -121,7 +122,7 @@ body.light {
 
   .dashboardgrid {
     margin-left: 2px;
-    width: 100%;
+    width: 70%;
   }
 
   .dashboardgrid.sidebar-open {

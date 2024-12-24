@@ -26,7 +26,7 @@ const Home = () => {
   }
 
   return (
-    <div className="container">
+    <div className="indexcontainer">
       <div className="navHeader">
         <NavBar toggleSidebar={handleSidebarToggle} />
       </div>

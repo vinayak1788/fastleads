@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { EngagementFeed } from "../../components/Dashboard/EngagementFeed/EngagementFeed";
-import "../../styles/Engagementfeed/globals.css";
+
 import Navbar from "../../components/Layout/Navbar";
 import Sidebar from "../../components/Layout/Sidebar";
 import  "../../styles/globals.css";

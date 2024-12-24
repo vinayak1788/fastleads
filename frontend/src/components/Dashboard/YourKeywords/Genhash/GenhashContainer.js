@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import styles from "../../../../styles/Keywords/Hastag.module.css";
+import styles from '../../../../styles/Keywords/Hastag.module.css';
+
 
 import LeftCard from "./LeftCard";
 import RightCard from "./RightCard";
