@@ -3,6 +3,8 @@ import CampaignPerformanceCard from '../../components/Dashboard/Campaign Managem
 import Navbar from "../../components/Layout/Navbar";
 import Sidebar from "../../components/Layout/Sidebar";
 import "../../styles/globals.css";
+import styles from '../../styles/Campaign/campaign.module.css';
+
 
 export default function CampaignPerformancePage() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);

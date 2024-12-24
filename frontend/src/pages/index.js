@@ -12,7 +12,7 @@ const Home = () => {
   useEffect(() => {
     setIsClient(true);
   }, []);
-
+ 
   const handleSidebarToggle = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
