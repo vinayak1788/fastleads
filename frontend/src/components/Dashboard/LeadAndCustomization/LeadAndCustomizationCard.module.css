@@ -1,10 +1,19 @@
 .lead-and-customization-card {
   display: flex;
-  gap: 20px;
-  margin: 20px;
-  border: 2px solid #ccc;
+  position: relative;
   width: 100%;
-  height: 98%;
+  height: 100%;
+}
+
+.lead-and-customization-card::after {
+  content: '';
+  position: absolute;
+  left: 49.5%;
+  top: 5%;
+  margin-top: 5%;
+  height: 75%;
+  width: 2px;
+  background-color: #2a2929;
 }
 
 .leadcard1 {
@@ -25,6 +34,11 @@
   width: 198.5%;
   font-size: 1.2rem;
 }
+.card-headercustomization{
+  font-size: 1rem;
+  color: #060606;
+  margin-bottom: 0%;
+}
 
 .close-button button {
   background: transparent;
@@ -40,13 +54,13 @@
 }
 
 .card-body {
-  padding: 20px;
+  padding: 10px;
 }
 
 .lead-overview-content {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 }
 
 .total-leads {
@@ -56,7 +70,7 @@
 .total-leads h1 {
   font-size: 2.5rem;
   color: #333;
-  margin: 10px 0;
+  margin: 2px;
 }
 
 .total-leads h2 {
@@ -90,10 +104,12 @@
   color: #333;
 }
 
-.chart-container {
+.chart-containercustomization {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  width: 100%;
+  height: 100%;
+  gap: 2px;
 }
 
 .total-leads-graph {
@@ -104,7 +120,7 @@
 .total-leads-graph h1 {
   font-size: 2.5rem;
   color: #333;
-  margin: 10px 0;
+  margin: 10px;
 }
 
 .total-leads-graph h2 {

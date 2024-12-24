@@ -1,9 +1,13 @@
-// next.config.js
-module.exports = {
-  images: {
-    domains: [
-      'cdn.builder.io', // Add the domain you're using for images
-    ],
-    dangerouslyAllowSVG: true, // Enable support for SVG images
-    },
-  }
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
+    config.cache = {
+      type: 'filesystem',
+      cacheDirectory: require('path').resolve('.next/cache')
+    }
+    return config
+  }
+}
+
+module.exports = nextConfig

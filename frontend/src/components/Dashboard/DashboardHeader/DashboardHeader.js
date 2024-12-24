@@ -1,126 +1,121 @@
-import React from 'react';
-import Image from 'next/image';
-import styles from "./DashboardHeader.module.css";
+import React, { useState } from "react";
+import { FaChartBar, FaStar, FaComments, FaClipboardList, FaTh, FaMinus } from "react-icons/fa";
 
-const NavigationButton = ({ icon, label }) => {
+const DashboardHeader = ({ onWidgetClick }) => {
   return (
-    <button className={styles.Headerbutton}>
-      <div className={styles.buttonContent}>
-        {icon && (
-          <Image
-            src={icon}
-            alt=""
-            width={20}
-            height={20}
-            className={styles.icon}
-          />
-        )}
-        <span className={styles.label}>{label}</span>
-      </div>
-    </button>
-  );
-};
-
-const DashboardHeader = ({ visibleCards, onToggleCard }) => {
-  const widgets = [
-    { id: 'keywords', name: 'Keywords Trends' },
-    { id: 'competitor', name: 'Competitor Keywords' },
-    { id: 'pushMarket', name: 'Push & Market Content' },
-    { id: 'campaign', name: 'Campaign Performance' },
-    { id: 'engagement', name: 'Engagement Feed' },
-    { id: 'social', name: 'Social Media Inbox' },
-    { id: 'scheduler', name: 'Content Scheduler' },
-    { id: 'lead', name: 'Lead Overview' }
-  ];
-
-  const navigationTop = [
-    {
-      label: "Dashboard",
-      icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/6eb0e158bca254f394363e9838c588e176ffeeeef56f1c599fb32fae0abf845f",
-    },
-    {
-      label: "New Post",
-      icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/226da273c6c6eed92fdf348465adc771372b8dcce516b4f1b4a4ccd5d3e600fe",
-    },
-  ];
-
-  const navigationLeft = [
-    {
-      icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/f8e2fb753990f8ad9948746a20a440148dcb173e12c17c2be1a6d94337567211",
-      label: "Company Structure",
-    },
-    {
-      icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/6eb0e158bca254f394363e9838c588e176ffeeeef56f1c599fb32fae0abf845f",
-      label: "Rating",
-    },
-  ];
-
-  const navigationRight = [
-    {
-      label: "Calendar",
-      icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/226da273c6c6eed92fdf348465adc771372b8dcce516b4f1b4a4ccd5d3e600fe",
-    },
-    {
-      label: "Messenger",
-      icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/bd1976aebdd38c57c3fcb71f230e7b9968eef97afc167c90097a8803e6c5fcf7",
-    },
-    {
-      label: "Feed",
-      icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/226da273c6c6eed92fdf348465adc771372b8dcce516b4f1b4a4ccd5d3e600fe",
-    },
-  ];
-
-  return (
-    <div className={styles['topheader-container']}>
-      <div className={styles.topRow}>
-        <div className={styles.navigationTop}>
-          {navigationTop.map((item, index) => (
-            <NavigationButton
-              key={index}
-              icon={item.icon}
-              label={item.label}
-            />
-          ))}
-        </div>
+    <header style={{ padding: "16px" }}>
+      {/* First Row */}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          marginBottom: "12px",
+        }}
+      >
+        <h1 style={{ margin: 0, fontSize: "24px", fontWeight: "bold" }}>
+          Dashboard
+        </h1>
+        <button
+          style={{
+            backgroundColor: "#6366f1",
+            color: "#fff",
+            border: "none",
+            borderRadius: "8px",
+            padding: "8px 16px",
+            cursor: "pointer",
+            fontSize: "14px",
+          }}
+        >
+          + New Post
+        </button>
       </div>
 
-      <div className={styles.mainRow}>
-        <div className={styles.leftSection}>
-          {navigationLeft.map((item, index) => (
-            <NavigationButton
-              key={index}
-              icon={item.icon}
-              label={item.label}
-            />
-          ))}
+      {/* Second Row */}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          flexWrap: "wrap",
+        }}
+      >
+        {/* Left-aligned buttons */}
+        <div style={{ display: "flex", gap: "12px" }}>
+          <button
+            style={{
+              backgroundColor: "#e2e8f0",
+              borderRadius: "12px",
+              padding: "8px 16px",
+              border: "none",
+              cursor: "pointer",
+              fontSize: "14px",
+            }}
+          >
+            <FaChartBar style={{ marginRight: "8px" }} />
+            Company Structure
+          </button>
+          <button
+            style={{
+              backgroundColor: "#e2e8f0",
+              borderRadius: "12px",
+              padding: "8px 16px",
+              border: "none",
+              cursor: "pointer",
+              fontSize: "14px",
+            }}
+          >
+            <FaStar style={{ marginRight: "8px" }} />
+            Rating
+          </button>
         </div>
 
-        <div className={styles.rightSection}>
-          {navigationRight.map((item, index) => (
-            <NavigationButton
-              key={index}
-              icon={item.icon}
-              label={item.label}
-            />
-          ))}
-          <div className={styles['widgets-dropdown']}>
-            <button className={styles['widgets-button']}>Widgets</button>
-            <div className={styles['widgets-content']}>
-              {widgets.map(widget => (
-                <label key={widget.id} className={styles['widget-item']}>
-                  <input
-                    type="checkbox"
-                    checked={visibleCards[widget.id]}
-                    onChange={() => onToggleCard(widget.id)}
-                  />
-                  {widget.name}
-                </label>
-              ))}
-            </div>
-          </div>
+        {/* Right-aligned buttons */}
+        <div style={{ display: "flex", gap: "12px" }}>
+          <button
+            style={{
+              backgroundColor: "#e2e8f0",
+              borderRadius: "12px",
+              padding: "8px 16px",
+              border: "none",
+              cursor: "pointer",
+              fontSize: "14px",
+            }}
+          >
+            <FaComments style={{ marginRight: "8px" }} />
+            Messenger
+          </button>
+          <button
+            style={{
+              backgroundColor: "#e2e8f0",
+              borderRadius: "12px",
+              padding: "8px 16px",
+              border: "none",
+              cursor: "pointer",
+              fontSize: "14px",
+            }}
+          >
+            <FaClipboardList style={{ marginRight: "8px" }} />
+            Feed
+          </button>
+          {/* New Widget Button */}
+          <button
+            onClick={onWidgetClick}
+            style={{
+              backgroundColor: "#e2e8f0",
+              borderRadius: "12px",
+              padding: "8px 16px",
+              border: "none",
+              cursor: "pointer",
+              fontSize: "14px",
+            }}
+          >
+            <FaTh style={{ marginRight: "8px" }} />
+            Widget
+          </button>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 

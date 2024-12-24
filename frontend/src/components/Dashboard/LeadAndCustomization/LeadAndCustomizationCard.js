@@ -52,15 +52,16 @@ const LeadAndCustomizationCard = () => {
           </div>
         </DashboardCard>
       </div>
-
+      
       <div className={styles.leadcard2}>
+      
         <DashboardCard>
-          <div className={styles['card-header']}>
+          <div className={styles['card-headercustomization']}>
             <span>Customization Lead Management</span>
           </div>
           <div className={styles['card-body']}>
-            <div className={styles['chart-container']}>
-              <ResponsiveContainer width="100%" height={150}>
+            <div className={styles['chart-containercustomization']}>
+              <ResponsiveContainer width="100%" height={180}>
                 <LineChart data={data}>
                   <CartesianGrid strokeDasharray="3 3" />
                   <XAxis dataKey="name" />

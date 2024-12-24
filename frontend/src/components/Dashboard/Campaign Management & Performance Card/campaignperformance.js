@@ -12,7 +12,7 @@ import {
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 import { Line } from 'react-chartjs-2';
-import '../../../styles/campaign.module.css';
+import '../../../styles/Campaign/campaign.module.css';
 
 // Register chart components
 ChartJS.register(

@@ -1,110 +1,85 @@
-.Headerbutton {
-  border-radius: 20px;
-  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+/* DashboardHeader.module.css */
+
+.topheader-container {
+  padding: 16px;
+}
+
+.topRow, .mainRow {
   display: flex;
-  min-height: 36px;
+  justify-content: space-between;
   align-items: center;
-  white-space: nowrap;
-  cursor: pointer;
+  margin-bottom: 16px;
+}
+
+.navigationTop, .leftSection, .rightSection {
+  display: flex;
+  gap: 12px;
+}
+
+.Headerbutton {
+  background-color: #e2e8f0;
+  border-radius: 12px;
   padding: 8px 16px;
   border: none;
-  background: white;
+  cursor: pointer;
+  font-size: 14px;
 }
 
 .buttonContent {
   display: flex;
   align-items: center;
-  gap: 4px;
-  justify-content: space-between;
+  gap: 8px;
 }
 
 .icon {
-  aspect-ratio: 1;
-  object-fit: contain;
-  object-position: center;
   width: 20px;
+  height: 20px;
 }
 
 .label {
-  text-transform: capitalize;
-  font: 500 14px Poppins, sans-serif;
-}
-
-.topheader-container {
-  width: 100%;
-  height: 100%;
-  padding: 2px;
-  display: flex;
-
-  flex-direction: column;
-}
-
-.topRow {
-  display: flex;
-  justify-content: space-between;
-  padding: 5px;
-  border-radius: 10px;
-  border: 1px solid black;
-}
-
-.navigationTop {
-  display: flex;
-  margin-bottom: 0px;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.mainRow {
-  margin-top: 0px;
-  display: flex;
-  border: 1px solid black;
-  padding: 5px;
-  border-radius: 10px;
-  justify-content: space-between;
-  margin-top: 16px;
-}
-
-.leftSection,
-.rightSection {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-.widgets-dropdown {
-  position: relative;
-  display: inline-block;
-  overflow-Y: visible;
+  font-size: 14px;
 }
 
 .widgets-button {
-  padding: 8px 16px;
-  border-radius: 20px;
+  background-color: #6366f1;
+  color: white;
   border: none;
-  background: white;
-  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  padding: 8px 16px;
   cursor: pointer;
+  font-size: 14px;
+}
+
+.widgets-dropdown {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 8px;
 }
 
 .widgets-content {
-  display: none;
-  position: absolute;
-  background-color: white;
-  min-width: 200px;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
-  padding: 12px;
-  border-radius: 8px;
-  z-index: 1;
-}
-
-.widgets-dropdown:hover .widgets-content {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .widget-item {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 8px;
-  cursor: pointer;
+}
+
+.widget-cards-container {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.widgetCard {
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 250px;
 }

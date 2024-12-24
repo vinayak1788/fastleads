@@ -1,12 +1,12 @@
 /* Global Styles */
-body {
+/* body {
   margin: 0;
   font-family: 'Arial', sans-serif;
-}
+} */
 
-h1, h2, h3 {
+/* h1, h2, h3 {
   margin: 0;
-}
+} */
 
 /* Layout Styles */
 .bg-gradient-to-r {
@@ -60,9 +60,9 @@ h1, h2, h3 {
 }
 
 /* Search Input Styles */
-input[type="text"] {
-  border-radius: 9999px; /* Full round input */
-}
+/* input[type="text"] {
+  border-radius: 9999px;  Full round input 
+} */
 
 .border-gray-300 {
   border-color: #D1D5DB; /* Light gray */

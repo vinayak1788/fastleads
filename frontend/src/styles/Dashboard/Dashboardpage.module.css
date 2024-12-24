@@ -1,34 +1,43 @@
-.dashboard-container {
-  padding: 20px;
+.dashboardWrapper {
+  width: 100%;
+  min-height: 100vh;
+ 
 }
-  .react-grid-item {
-    transition: all 200ms ease;
-    transition-property: left, top, width, height;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  }
 
-  .react-grid-item.react-grid-placeholder {
-    background: #f0f0f0;
-    opacity: 0.4;
-    border-radius: 8px;
-    transition-duration: 100ms;
-    z-index: 2;
-    user-select: none;
-  }
+.dashHeader {
+  width: 100%;
+  
+  top: 0;
+ 
+}
 
-  .react-grid-item:hover {
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-  }
+.dashboardContainer {
+  padding: 2px;
+  width: 100%;
+}
 
-  .card-header {
-    padding: 12px;
-    cursor: grab;
-    background: #f8f9fa;
-    border-bottom: 1px solid #e0e0e0;
-    border-radius: 8px 8px 0 0;
-  }
+.layout {
+  width: 100%;
+  margin: 0 auto;
+}
 
-  .card-header:active {
-    cursor: grabbing;
-  }
+.gridItem {
+ 
+  
+  padding: 2px;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Add smooth transitions for dragging */
+.gridItem:active {
+  cursor: grabbing;
+  opacity: 0.8;
+  transition: all 0.2s ease;
+}
+
+/* Ensure the grid items maintain proper spacing */
+.gridItem > * {
+  height: 90%;
+  width: 90%;
+}

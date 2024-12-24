@@ -1,6 +1,6 @@
 
  .card {
-  background: linear-gradient(180deg, #f0f8ff 0%, #dfefff 100%);
+  /* background: linear-gradient(180deg, #f0f8ff 0%, #dfefff 100%); */
   border-radius: 12px;
   padding: 20px;
   width: 90%;
@@ -12,6 +12,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: #6e8396;
+  width: 100%;
+  
   margin-bottom: 16px;
 }
 

@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
-import styles from '../../styles/Navbar/Navbar.module.css'; // Adjust based on the actual location of Navbar.js
+import styles from '../../styles/Navbar/Navbar.module.css'
 
-import Profile from './Profile';
+import Profile from './Profile'
 
-
-
+ 
 // UserMenuItem Component
 function UserMenuItem({ icon, text }) {
   return (
@@ -59,22 +58,7 @@ const UserProfile = ({ name, role, image, onClick }) => {
     <div className={styles.profileSection} onClick={onClick}>
       <div className={styles.profileInfo}>
         <Profile />
-        {/* <img
-          loading="lazy"
-          src={image}
-          className={styles.profileImage}
-          alt={`${name}'s profile picture`}
-        />
-        <div className={styles.userDetails}>
-          <div className={styles.userName}>{name}</div>
-          <div className={styles.userRole}>{role}</div>
-        </div>
-        <img
-          loading="lazy"
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/d2ae91a05b275dc93b76d55896dc9fa5eac7114adde3a987a2fd7742381d7101?placeholderIfAbsent=true&apiKey=1fcf7458f0984c828835e605ab2bf74b"
-          className={styles.dropdownIcon}
-          alt="Dropdown"
-        /> */}
+        
       </div>
     </div>
   );
@@ -142,20 +126,7 @@ const NavigationBar = () => {
             </div>
           </div>
 
-          {/* UserMenu - Dropdown */}
-          {/* {isMenuOpen && (
-            <div className={styles.menuContainer}>
-              <div className={styles.menuWrapper}>
-                <div className={styles.menuContent}>
-                  <UserMenuItem icon={menuItems[0].icon} text={menuItems[0].text} />
-                  <ThemeSelector onChangeTheme={changeTheme} />
-                  {menuItems.slice(1).map((item, index) => (
-                    <UserMenuItem key={index} icon={item.icon} text={item.text} />
-                  ))}
-                </div>
-              </div>
-            </div>
-          )} */}
+          
         </div>
       </nav>
     );

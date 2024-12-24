@@ -1,63 +1,104 @@
-"use client"
+"use client";
 
 import React from 'react';
-import DashboardCard from '../../DashboardCard'; // Import reusable DashboardCard component
+import DashboardCard from '../../DashboardCard';
 import styles from './PushMarketContentCard.module.css';
-// Import CSS file for this component
-import { Doughnut } from 'react-chartjs-2'; // Import Doughnut chart from Chart.js
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 
-// Register necessary Chart.js components
-ChartJS.register(ArcElement, Tooltip, Legend);
+const PushMarketContentCard = () => {
+    const totalValue = 1000;
+    const currentValue = 652;
+    const percentage = (currentValue / totalValue) * 100;
 
-// Data for the content push marketing radial chart (static doughnut chart)
-const data = {
-  labels: ['Content Push', 'Remaining'], // Labels for the doughnut sections
-  datasets: [
-    {
-      label: 'Content Push Marketing', // Label for the dataset
-      data: [652, 1000 - 652], // Data values (Total 1000, with 652 for content push)
-      backgroundColor: ['#36A2EB', '#FFCD56'], // Colors for each section
-      borderWidth: 0, // Remove border width for a clean look
-    },
-  ],
-};
+    const getSegments = (percentage) => {
+        const segments = [];
+        const segmentPercentages = [
+            { limit: 25, color: '#FF6666' },   // Red
+            { limit: 50, color: '#FFCC66' },   // Yellow
+            { limit: 75, color: '#FF9933' },   // Orange
+            { limit: 100, color: '#66CC66' },  // Green
+        ];
 
-// Options for the doughnut chart (static radial chart)
-const options = {
-  responsive: true,
-  cutout: '60%', // Makes the center hole larger, creating a doughnut effect
-  plugins: {
-    tooltip: {
-      callbacks: {
-        label: function (tooltipItem) {
-          return `${tooltipItem.label}: ${tooltipItem.raw}`; // Display value on hover
-        },
-      },
-    },
-  },
-};
-  const PushMarketContentCard = () => {
-    const totalVisitors = data.datasets[0].data.reduce((a, b) => a + b, 0);
+        let progress = 0;
+        for (const segment of segmentPercentages) {
+            if (percentage > progress) {
+                const segmentEnd = Math.min(percentage, segment.limit);
+                segments.push({
+                    start: progress,
+                    end: segmentEnd,
+                    color: segment.color,
+                });
+                progress = segment.limit;
+            } else {
+                break;
+            }
+        }
+        return segments;
+    };
+
+    const segments = getSegments(percentage);
+    const centerX = 160;
+    const centerY = 160;
+    const radius = 160;
+
+    const polarToCartesian = (angleInDegrees) => {
+        const angleInRadians = (angleInDegrees - 90) * Math.PI / 180.0;
+        return {
+            x: centerX + (radius * Math.cos(angleInRadians)),
+            y: centerY + (radius * Math.sin(angleInRadians)),
+        };
+    };
+
+    const getArcPath = (startAngle, endAngle) => {
+        const start = polarToCartesian(endAngle);
+        const end = polarToCartesian(startAngle);
+        const largeArcFlag = endAngle - startAngle <= 180 ? "0" : "1";
+        return `M ${start.x} ${start.y} A ${radius} ${radius} 0 ${largeArcFlag} 0 ${end.x} ${end.y}`;
+    };
 
     return (
-      <DashboardCard className={styles.pushMarketCard}>
-        <div className={styles['card-header']}>
-          <span>Create, Push & Market Content</span>
-          <a href="/Contentpush" className={styles['expend-button']}>
-            <button>↗</button>
-          </a>
-        </div>
-        <div className={styles['card-body']}>
-          <div className={styles['content-push']}>
-            <Doughnut data={data} options={options} />
-          </div>
-          <div className={styles['content-info']}>
-            <p><strong>Content Push Marketing:</strong>652</p>
-            <p><strong>Last Check:</strong> 24 Apr</p>
-          </div>
-        </div>
-      </DashboardCard>
+        <DashboardCard className={styles['push-market-content-card']}>
+            <div className={styles['card-header']}>
+                <span>Create, Push & Market Content</span>
+                <a href="/another-page" className={styles['expend-button']}>
+                    <button>↗</button>
+                </a>
+            </div>
+            <div className={styles['card-body']}>
+                <div className={styles['radial-progress']}>
+                    <svg width="320" height="200" viewBox="0 0 320 200">
+                        <g transform="translate(0,0)">
+                            <circle
+                                r="160"
+                                fill="none"
+                                stroke="#d3d3d3"
+                                strokeWidth="1"
+                                strokeDasharray="4 6"
+                                transform="translate(160,160) rotate(-90)"
+                            />
+                            {segments.map((segment, index) => (
+                                <path
+                                    key={index}
+                                    d={getArcPath(segment.start * 1.8, segment.end * 1.8)}
+                                    stroke={segment.color}
+                                    strokeWidth="3"
+                                    fill="none"
+                                />
+                            ))}
+                        </g>
+                        <text x="50%" y="50%" textAnchor="middle" dy="10" className={styles['radial-value']}>
+                            {currentValue}
+                        </text>
+                        <text x="50%" y="65%" textAnchor="middle" dy="10" className={styles['radial-label']}>
+                            Content Push Marketing
+                        </text>
+                        <text x="50%" y="80%" textAnchor="middle" dy="10" className={styles['last-check']}>
+                            Last Check on 24 Apr
+                        </text>
+                    </svg>
+                </div>
+            </div>
+        </DashboardCard>
     );
-  };
+};
+
 export default PushMarketContentCard;
