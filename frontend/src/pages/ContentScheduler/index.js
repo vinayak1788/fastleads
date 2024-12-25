@@ -4,7 +4,7 @@ import Graphs from '../../components/Dashboard/ContentScheduler/Content/Graphs';
 import DragandDrop from '../../components/Dashboard/ContentScheduler/Content/DragandDrop';
 import Navbar from '../../components/Layout/Navbar';
 import Sidebar from '../../components/Layout/Sidebar';
-import  "../../styles/globals.css";
+
 
 export default function Home() {
    const [isSidebarOpen, setIsSidebarOpen] = useState(false);

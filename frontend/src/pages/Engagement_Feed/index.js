@@ -3,7 +3,7 @@ import { EngagementFeed } from "../../components/Dashboard/EngagementFeed/Engage
 
 import Navbar from "../../components/Layout/Navbar";
 import Sidebar from "../../components/Layout/Sidebar";
-import  "../../styles/globals.css";
+
 
 export default function Home() {
    const [isSidebarOpen, setIsSidebarOpen] = useState(false);

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import CampaignPerformanceCard from '../../components/Dashboard/Campaign Management & Performance Card/campaignperformance';
 import Navbar from "../../components/Layout/Navbar";
 import Sidebar from "../../components/Layout/Sidebar";
-import "../../styles/globals.css";
+
 import styles from '../../styles/Campaign/campaign.module.css';
 
 

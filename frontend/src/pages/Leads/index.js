@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Head from "next/head";
 import Navbar from "../../components/Layout/Navbar";
 import Sidebar from "../../components/Layout/Sidebar";
-import "../../styles/globals.css";
+
 import CustomizationLeadManagement from "../../components/Dashboard/LeadAndCustomization/Customizationleadmanagement";
 import SocialMediaCards from "../../components/Dashboard/LeadAndCustomization/SocialMediaCards";
 

@@ -5,7 +5,7 @@ import SocialCard from '../../components/Dashboard/YourKeywords/SocialCard';
 import GenhashContainer from '../../components/Dashboard/YourKeywords/Genhash/GenhashContainer';
 import Navbar from "../../components/Layout/Navbar";
 import Sidebar from "../../components/Layout/Sidebar";
-import  "../../styles/globals.css";
+
 
 const App = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);

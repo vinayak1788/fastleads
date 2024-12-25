@@ -2,7 +2,6 @@ import React,{useState} from 'react';
 import DashboardCard from '../../components/Dashboard/SocialMediaInbox/DashboardCard';
 import Navbar from "../../components/Layout/Navbar";
 import Sidebar from "../../components/Layout/Sidebar";
-import  "../../styles/globals.css";
 
 export default function Dashboard() {
  

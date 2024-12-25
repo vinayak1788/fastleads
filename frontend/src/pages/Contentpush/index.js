@@ -4,7 +4,7 @@ import Link from "next/link";
 import Navbar from "../../components/Layout/Navbar";
 import Sidebar from "../../components/Layout/Sidebar";
 import "../../styles/Contentpush/content.module.css";
-import "../../styles/globals.css";
+
 
 // Register Chart.js components at the top level
 Chart.register(...registerables);
