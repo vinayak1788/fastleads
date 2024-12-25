@@ -17,11 +17,6 @@
       "static/chunks/main.js",
       "static/chunks/pages/index.js"
     ],
-    "/Competitors": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/Competitors.js"
-    ],
     "/Keywords_Trends": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
